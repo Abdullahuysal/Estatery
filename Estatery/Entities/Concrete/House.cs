@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Role:IEntity
+    public class House:IEntity
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public ICollection<User> Users { get; set; }
+        public int HouseId { get; set; }
 
+        
     }
 }
