@@ -9,13 +9,15 @@ namespace Entities.Concrete
 {
     public class User:IEntity
     {
-        public int UserId { get; set; }
-        public string UserFirstName { get; set; }
-        public string UserSecondName { get; set; }
-        public string UserEmail { get; set; }
-        public string UserPassword { get; set; }
-
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public bool? Active { get; set; } = true;
         //Navigation Properties
-        public ICollection<Role> UserRoles { get; set; }
+        public Role Role { get; set; }
+
+        
     }
 }

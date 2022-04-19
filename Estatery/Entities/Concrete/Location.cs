@@ -1,5 +1,4 @@
-﻿using Core.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class City:IEntity
+    public class Location
     {
-        public int CityId { get; set; }
+        public int Id { get; set; }
         public string CityName { get; set; }
-        public ICollection<District> CityDistricts { get; set; }
-        
+        public string CountryName { get; set; }
     }
 }

@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class House:IEntity
+    public class House:RealEstate,IEntity
     {
-        public int HouseId { get; set; }
+        public int Age { get; set; }
+        public int NumberOfRooms { get; set; }
+        public int NumberOfBath { get; set; }
+        public int SquareMeter { get; set; }
+        public SalesType SalesTypes { get; set; }
 
-        
     }
 }
