@@ -10,7 +10,7 @@ namespace Entities.Concrete
     public class Role:IEntity
     {
         public int Id { get; set; }
-        public String Name { get; set; }
+        public string Name { get; set; }
         public ICollection<User> Users { get; set; }
 
     }

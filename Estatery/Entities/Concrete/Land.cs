@@ -10,7 +10,7 @@ namespace Entities.Concrete
     public class Land:RealEstate,IEntity
     {
         public int Price { get; set; }
-        public int Square { get; set; }
-        public SalesType SalesType { get; set; }
+        public int SquareMeter { get; set; }
+
     }
 }
