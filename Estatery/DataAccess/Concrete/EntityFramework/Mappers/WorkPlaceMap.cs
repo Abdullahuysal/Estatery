@@ -13,9 +13,6 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
     {
         public void Configure(EntityTypeBuilder<WorkPlace> builder)
         {
-            builder.HasKey(w => w.Id);
-            builder.Property(w => w.Id)
-                        .ValueGeneratedOnAdd();
             builder.Property(w => w.CreatedAt)
                         .IsRequired()
                         .HasDefaultValue(DateTime.Now);
@@ -29,6 +26,8 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
                         .IsRequired();
             builder.Property(w => w.SquareMeter)
                         .IsRequired();
+            builder.HasOne(w => w.Location)
+                    .WithOne();
 
         }
     }

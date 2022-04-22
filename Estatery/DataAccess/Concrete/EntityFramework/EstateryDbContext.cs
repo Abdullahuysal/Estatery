@@ -37,6 +37,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<WorkPlace> WorkPlaces { get; set; }
         public DbSet<SalesCategory> SalesCategories { get; set; }
         public DbSet<SalesType> SalesTypes { get; set; }
+        public DbSet<ImageUrl> ImageUrls { get; set; }
+        public DbSet<Location> Locations { get; set; }
 
     }
     

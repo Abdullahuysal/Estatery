@@ -19,17 +19,5 @@ namespace WebAPI.Controllers
         {
             _houseService = houseService;
         }
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var result = _houseService.GetAll();
-            return Ok(result);
-        }
-        [HttpPost]
-        public IActionResult Add(House house)
-        {
-            var result = _houseService.Add(house);
-            return Ok(result);
-        }
     }
 }

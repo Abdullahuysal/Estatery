@@ -16,16 +16,5 @@ namespace Business.Concrete
         {
             _houseDal = houseDal;
         }
-
-        public string Add(House house)
-        {
-            _houseDal.Add(house);
-            return "Eklendi";
-        }
-
-        public List<House> GetAll()
-        {
-            return _houseDal.GetAll();
-        }
     }
 }
