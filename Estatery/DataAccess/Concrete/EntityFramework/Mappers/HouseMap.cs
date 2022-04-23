@@ -32,6 +32,9 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
                         .IsRequired();
             builder.HasOne(h => h.Location)
                     .WithOne();
+           
+
+                    
                     
         }
     }

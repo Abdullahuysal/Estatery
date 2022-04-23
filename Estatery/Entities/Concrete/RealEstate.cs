@@ -19,7 +19,7 @@ namespace Entities.Concrete
         public int? LocationId { get; set; }
         public SalesType SalesType { get; set; }
         public int? SalesTypeId { get; set; }
-        public ICollection<ImageUrl> ImageUrls { get; set; }
+
 
 
     }

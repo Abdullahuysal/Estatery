@@ -28,6 +28,8 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
                         .IsRequired();
             builder.HasOne(l => l.Location)
                     .WithOne();
+            builder.HasMany(h => h.ImageUrls)
+                    .WithOne();
         }
     }
 }
