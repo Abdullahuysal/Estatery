@@ -1,0 +1,17 @@
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\Dtos.deps.json
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\Dtos.dll
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\ref\Dtos.dll
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\Dtos.pdb
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\Core.dll
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\Entities.dll
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\Entities.pdb
+D:\github\Estatery\Estatery\Dtos\bin\Debug\net5.0\Core.pdb
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.csproj.AssemblyReference.cache
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.AssemblyInfoInputs.cache
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.AssemblyInfo.cs
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.csproj.CoreCompileInputs.cache
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.csproj.CopyComplete
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.dll
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\ref\Dtos.dll
+D:\github\Estatery\Estatery\Dtos\obj\Debug\net5.0\Dtos.pdb

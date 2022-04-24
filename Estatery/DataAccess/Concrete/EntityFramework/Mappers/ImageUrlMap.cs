@@ -19,9 +19,6 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
             builder.Property(i => i.Url)
                         .IsRequired()
                         .HasMaxLength(150);
-          
-                   
-
         }
     }
 }

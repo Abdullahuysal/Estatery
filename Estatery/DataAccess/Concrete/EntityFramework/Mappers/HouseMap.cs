@@ -29,13 +29,7 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
             builder.Property(h => h.NumberOfBath)
                         .IsRequired();
             builder.Property(h => h.SquareMeter)
-                        .IsRequired();
-            builder.HasOne(h => h.Location)
-                    .WithOne();
-           
-
-                    
-                    
+                        .IsRequired();    
         }
     }
 }

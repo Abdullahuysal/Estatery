@@ -22,7 +22,6 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
             builder.Property(l => l.DistrictName)
                             .IsRequired()
                             .HasMaxLength(100);
-            
         }
     }
 }

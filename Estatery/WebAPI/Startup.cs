@@ -1,5 +1,6 @@
 using Business.Abstract;
 using Business.Concrete;
+using Business.Converter;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
@@ -40,6 +41,8 @@ namespace WebAPI
             services.AddCors();
             services.AddSingleton<IHouseService, HouseManager>();
             services.AddSingleton<IHouseDal, EfHouseDal>();
+            services.AddSingleton<IHouseConverter, HouseConverter>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

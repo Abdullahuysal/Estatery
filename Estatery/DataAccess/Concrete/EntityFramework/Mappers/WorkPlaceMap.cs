@@ -25,12 +25,7 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
             builder.Property(w => w.Price)
                         .IsRequired();
             builder.Property(w => w.SquareMeter)
-                        .IsRequired();
-            builder.HasOne(w => w.Location)
-                    .WithOne();
-            builder.HasMany(h => h.ImageUrls)
-                    .WithOne();
-           
+                        .IsRequired();           
         }
     }
 }

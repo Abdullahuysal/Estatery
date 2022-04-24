@@ -18,6 +18,57 @@ namespace DataAccess.Concrete.EntityFramework
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<House>(h =>
+            {
+                h.HasOne(h => h.Location)
+                .WithOne(l => l.House)
+                .HasForeignKey<House>(h => h.LocationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                h.HasOne(h => h.SalesType)
+                .WithMany(s => s.Houses)
+                .HasForeignKey(h => h.SalesTypeId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+                h.HasOne(h => h.SalesCategory)
+                .WithMany(s => s.Houses)
+                .HasForeignKey(h=>h.SalesCategoryId)
+                .OnDelete(DeleteBehavior.NoAction);
+            });
+            modelBuilder.Entity<Land>(l =>
+            {
+                l.HasOne(l => l.Location)
+                .WithOne(l=>l.Land)
+                .HasForeignKey<Land>(l=>l.LocationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                l.HasOne(l => l.SalesType)
+               .WithMany(s=>s.Lands)
+               .HasForeignKey(l => l.SalesTypeId)
+               .OnDelete(DeleteBehavior.NoAction);
+
+                l.HasOne(l => l.SalesCategory)
+                .WithMany(s=>s.Lands)
+                .HasForeignKey(l => l.SalesCategoryId)
+                .OnDelete(DeleteBehavior.NoAction);
+            });
+            modelBuilder.Entity<WorkPlace>(w =>
+            {
+                w.HasOne(w => w.Location)
+                .WithOne(l => l.WorkPlace)
+                .HasForeignKey<WorkPlace>(w => w.LocationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                w.HasOne(w => w.SalesType)
+               .WithMany(s=>s.WorkPlaces)
+               .HasForeignKey(w => w.SalesTypeId)
+               .OnDelete(DeleteBehavior.NoAction);
+
+                w.HasOne(w => w.SalesCategory)
+                .WithMany(s => s.WorkPlaces)
+                .HasForeignKey(w => w.SalesCategoryId)
+                .OnDelete(DeleteBehavior.NoAction);
+            });
 
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new RoleMap());

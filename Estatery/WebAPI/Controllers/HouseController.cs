@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Entities.Concrete;
+using Dtos.Requests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,6 +18,26 @@ namespace WebAPI.Controllers
         public HouseController(IHouseService houseService)
         {
             _houseService = houseService;
+        }
+        [HttpGet("getallhouses")]
+        public IActionResult GetAllHouses()
+        {
+            var result = _houseService.GetAllHouses();
+            if (result.Result.Success)
+            {
+                return Ok(result.Result.Data);
+            }
+            return BadRequest(result.Result);
+        }
+        [HttpPost("addhouse")]
+        public IActionResult AddHouse(AddHouseRequest request)
+        {
+            var result = _houseService.AddHouse(request);
+            if (result.Result.Success)
+            {
+                return Ok(result.Result);
+            }
+            return BadRequest(result.Result);
         }
     }
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2clyPuvuOLdpLipQqiW6K2mq165RbnTmE4sGY4Jto/u1jfpqS7dNCLY/y8cTGVcIa4CD/8+vRN8Vk8CRw8FhWQ==",
+  "dgSpecHash": "8L/6rF7nEyexMelZVGixT0TP3Bx1Oxx1qW7s+Ym0llFtz4/RI8ZlsjDFQ2vYWR4fUv0lbtX/KrBGWGhwE+yANQ==",
   "success": true,
   "projectFilePath": "D:\\github\\Estatery\\Estatery\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\uysal\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.15\\microsoft.entityframeworkcore.5.0.15.nupkg.sha512",

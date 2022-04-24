@@ -23,8 +23,10 @@ D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\ref\Business.dll
 D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\Business.pdb
 D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\Core.dll
 D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\DataAccess.dll
+D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\Dtos.dll
 D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\Entities.dll
 D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\DataAccess.pdb
+D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\Dtos.pdb
 D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\Core.pdb
 D:\github\Estatery\Estatery\Business\bin\Debug\net5.0\Entities.pdb
 D:\github\Estatery\Estatery\Business\obj\Debug\net5.0\Business.csproj.AssemblyReference.cache
