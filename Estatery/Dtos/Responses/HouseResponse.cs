@@ -9,9 +9,6 @@ namespace Dtos.Responses
 {
     public class HouseResponse
     {
-        public SalesCategory SalesCategory { get; set; }
-        public Location Location { get; set; }
-        public SalesType SalesType { get; set; }
         public string Advertiser { get; set; }
         public int ConstructionYear { get; set; }
         public int NumberOfRooms { get; set; }

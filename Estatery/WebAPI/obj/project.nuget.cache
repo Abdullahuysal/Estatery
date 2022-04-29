@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8L/6rF7nEyexMelZVGixT0TP3Bx1Oxx1qW7s+Ym0llFtz4/RI8ZlsjDFQ2vYWR4fUv0lbtX/KrBGWGhwE+yANQ==",
+  "dgSpecHash": "Frx8am9lBN6/67WTZtI+fFD9LzxFAK5GEqNtLWrxGBnewoau8SmUeMEMEPWMeaE0+c+NKTeW3eCqv+WxX2pdLw==",
   "success": true,
   "projectFilePath": "D:\\github\\Estatery\\Estatery\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -104,7 +104,8 @@
     "C:\\Users\\uysal\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\uysal\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\uysal\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }

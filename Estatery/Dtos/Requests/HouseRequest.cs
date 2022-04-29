@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Dtos.Requests
 {
-    public class AddHouseRequest
+    public class HouseRequest
     {
-        public int? SalesCategoryId { get; set; }
-        public int LocationId { get; set; }
-        public int SalesTypeId { get; set;}
+        public SalesTypeRequest SalesType { get; set; }
+        public SalesCategoryRequest SalesCategory { get; set; }
+        public LocationRequest Location { get; set; }
         public string Advertiser { get; set; }
         public int ConstructionYear { get; set; }
         public int NumberOfRooms { get; set; }

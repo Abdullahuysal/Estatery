@@ -97,8 +97,8 @@ namespace DataAccess.Migrations
                     SalesCategoryId = table.Column<int>(type: "int", nullable: true),
                     LocationId = table.Column<int>(type: "int", nullable: true),
                     SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 24, 17, 28, 11, 235, DateTimeKind.Local).AddTicks(1576)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 24, 17, 28, 11, 245, DateTimeKind.Local).AddTicks(2114)),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 688, DateTimeKind.Local).AddTicks(2472)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 689, DateTimeKind.Local).AddTicks(6380)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -133,8 +133,8 @@ namespace DataAccess.Migrations
                     SalesCategoryId = table.Column<int>(type: "int", nullable: true),
                     LocationId = table.Column<int>(type: "int", nullable: true),
                     SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 24, 17, 28, 11, 246, DateTimeKind.Local).AddTicks(6408)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 24, 17, 28, 11, 246, DateTimeKind.Local).AddTicks(7145)),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(7788)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(8352)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -169,8 +169,8 @@ namespace DataAccess.Migrations
                     SalesCategoryId = table.Column<int>(type: "int", nullable: true),
                     LocationId = table.Column<int>(type: "int", nullable: true),
                     SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 24, 17, 28, 11, 247, DateTimeKind.Local).AddTicks(8720)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 24, 17, 28, 11, 247, DateTimeKind.Local).AddTicks(9330)),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8246)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8812)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>

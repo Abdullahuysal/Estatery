@@ -41,7 +41,17 @@ namespace WebAPI
             services.AddCors();
             services.AddSingleton<IHouseService, HouseManager>();
             services.AddSingleton<IHouseDal, EfHouseDal>();
+            services.AddSingleton<ILocationDal, EfLocationDal>();
+            services.AddSingleton<ISalesTypeDal, EfSalesTypeDal>();
+            services.AddSingleton<ISalesCategoryDal, EfSalesCategoryDal>();
+            services.AddSingleton<ILocationConverter, LocationConverter>();
             services.AddSingleton<IHouseConverter, HouseConverter>();
+            services.AddSingleton<ISalesCategoryConverter, SalesCategoryConverter>();
+            services.AddSingleton<ISalesTypeConverter, SalesTypeConverter>();
+            services.AddSingleton<ILocationService,LocationManager>();
+            services.AddSingleton<ISalesCategoryService, SalesCategoryManager>();
+            services.AddSingleton<ISalesTypeService, SalesTypeManager>();
+           
 
         }
 

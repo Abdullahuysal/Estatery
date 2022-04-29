@@ -30,9 +30,9 @@ namespace WebAPI.Controllers
             return BadRequest(result.Result);
         }
         [HttpPost("addhouse")]
-        public IActionResult AddHouse(AddHouseRequest request)
+        public IActionResult AddHouse(HouseRequest houseRequest)
         {
-            var result = _houseService.AddHouse(request);
+            var result = _houseService.AddHouse(houseRequest);
             if (result.Result.Success)
             {
                 return Ok(result.Result);

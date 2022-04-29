@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(EstateryDbContext))]
-    [Migration("20220424142811_deneme")]
+    [Migration("20220428133304_deneme")]
     partial class deneme
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 24, 17, 28, 11, 235, DateTimeKind.Local).AddTicks(1576));
+                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 688, DateTimeKind.Local).AddTicks(2472));
 
                     b.Property<int?>("LocationId")
                         .HasColumnType("int");
@@ -62,7 +62,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 24, 17, 28, 11, 245, DateTimeKind.Local).AddTicks(2114));
+                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 689, DateTimeKind.Local).AddTicks(6380));
 
                     b.HasKey("Id");
 
@@ -119,7 +119,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 24, 17, 28, 11, 246, DateTimeKind.Local).AddTicks(6408));
+                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(7788));
 
                     b.Property<int?>("LocationId")
                         .HasColumnType("int");
@@ -139,7 +139,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 24, 17, 28, 11, 246, DateTimeKind.Local).AddTicks(7145));
+                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(8352));
 
                     b.HasKey("Id");
 
@@ -285,7 +285,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 24, 17, 28, 11, 247, DateTimeKind.Local).AddTicks(8720));
+                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8246));
 
                     b.Property<int?>("LocationId")
                         .HasColumnType("int");
@@ -305,7 +305,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 24, 17, 28, 11, 247, DateTimeKind.Local).AddTicks(9330));
+                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8812));
 
                     b.HasKey("Id");
 

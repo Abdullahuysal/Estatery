@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Dtos.Requests;
+using Dtos.Responses;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ namespace Business.Abstract
     public interface IHouseService
     {
         Task<IDataResult<ICollection<House>>> GetAllHouses();
-        Task<IDataResult<House>> GetHouseById(int houseId);
-        Task<IResult> AddHouse(AddHouseRequest addHouseRequest);
-        Task<IResult> UpdateHouse(House house);
-        Task<IResult> DeleteHouse(House house);
+        Task<House> FindHomeRelatedInformation(House house);
+        Task<IResult> AddHouse(HouseRequest HouseRequest);
+        Task<IResult> UpdateHouse(HouseRequest houseRequest);
+        Task<IResult> DeleteHouse(HouseRequest houseRequest);
 
     }
 }

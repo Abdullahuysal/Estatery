@@ -10,6 +10,6 @@ namespace Business.Converter
 {
     public interface IHouseConverter
     {
-        House HouseDtoToHouse(AddHouseRequest addHouseRequest);
+        House HouseDtoToHouse(HouseRequest HouseRequest);
     }
 }

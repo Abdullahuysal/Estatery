@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AlZQRjhHZm1eYbzJ/VLChMIz/MokUmjjYH0Pv3I0sh8BV78iaKr/CUqfjMlqcmzdUl+tVxcbdghPspUZk+VwUw==",
+  "dgSpecHash": "IGi894TjVooCwMH8ca/qEoUwMt9F+VB732J+5xSXmtVnnB+yHcVc0x3fLlOaT5W56rLF6/RyStPAXzyT1i8COQ==",
   "success": true,
   "projectFilePath": "D:\\github\\Estatery\\Estatery\\Web\\Web.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\uysal\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }
