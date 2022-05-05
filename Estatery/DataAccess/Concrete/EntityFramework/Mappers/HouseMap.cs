@@ -20,8 +20,8 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
                         .IsRequired()
                         .HasDefaultValue(DateTime.Now);
             builder.Property(h => h.Advertiser)
-                        .IsRequired()
-                        .HasMaxLength(50);
+                  .IsRequired()
+                  .HasMaxLength(50);
             builder.Property(h => h.ConstructionYear)
                         .IsRequired();
             builder.Property(h => h.NumberOfRooms)
@@ -29,7 +29,7 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
             builder.Property(h => h.NumberOfBath)
                         .IsRequired();
             builder.Property(h => h.SquareMeter)
-                        .IsRequired();    
+                        .IsRequired();
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfImageUrlDal: EfEntityRepositoryBase<ImageUrl,EstateryDbContext>,IImageUrlDal
+    public class EfHouseImageUrlDal: EfEntityRepositoryBase<HouseImageUrl,EstateryDbContext>,IHouseImageUrlDal
     {
 
     }

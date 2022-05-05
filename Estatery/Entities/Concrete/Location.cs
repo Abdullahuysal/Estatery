@@ -13,9 +13,9 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public string CityName { get; set; }
         public string DistrictName { get; set; }
-        public House House { get; set; }
-        public Land Land { get; set; }
-        public WorkPlace WorkPlace { get; set; }
+        public ICollection<House> Houses { get; set; }
+        public ICollection<Land> Lands { get; set; }
+        public ICollection<WorkPlace> WorkPlaces { get; set; }
 
     }
 }

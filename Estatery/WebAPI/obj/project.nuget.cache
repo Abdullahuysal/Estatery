@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p7k1d/GyHrfSWleHmK5T7X8PL8dQ/fWvxiT8rcL7T1jl52aBLIn3mzD30ti0flvKVWj5q6b7HpfwYF4S4zNUvQ==",
+  "dgSpecHash": "B1LlRZav6oLyT7o/CcRh9i31BsMUNCcncUApvW/E03Tr20IwuMZOVtJrfDKCxOWlwzGKuharLFkKzcKN/br3qQ==",
   "success": true,
   "projectFilePath": "D:\\github\\Estatery\\Estatery\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\uysal\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

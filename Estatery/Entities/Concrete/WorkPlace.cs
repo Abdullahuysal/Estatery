@@ -11,7 +11,7 @@ namespace Entities.Concrete
     {
         public int Price { get; set; }
         public int SquareMeter { get; set; }
-        public ICollection<ImageUrl> ImageUrls { get; set; }
+        public ICollection<WorkPlaceImageUrl> WorkPlaceImageUrls { get; set; }
 
     }
 }

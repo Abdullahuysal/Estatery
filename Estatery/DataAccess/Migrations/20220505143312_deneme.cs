@@ -97,8 +97,8 @@ namespace DataAccess.Migrations
                     SalesCategoryId = table.Column<int>(type: "int", nullable: true),
                     LocationId = table.Column<int>(type: "int", nullable: true),
                     SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 688, DateTimeKind.Local).AddTicks(2472)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 689, DateTimeKind.Local).AddTicks(6380)),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 508, DateTimeKind.Local).AddTicks(8153)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 513, DateTimeKind.Local).AddTicks(2293)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -133,8 +133,8 @@ namespace DataAccess.Migrations
                     SalesCategoryId = table.Column<int>(type: "int", nullable: true),
                     LocationId = table.Column<int>(type: "int", nullable: true),
                     SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(7788)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(8352)),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(7327)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(8697)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -169,8 +169,8 @@ namespace DataAccess.Migrations
                     SalesCategoryId = table.Column<int>(type: "int", nullable: true),
                     LocationId = table.Column<int>(type: "int", nullable: true),
                     SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8246)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8812)),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(8627)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(9700)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -195,38 +195,124 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ImageUrls",
+                name: "HouseImageUrls",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    LandId = table.Column<int>(type: "int", nullable: true),
-                    WorkPlaceId = table.Column<int>(type: "int", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HouseId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ImageUrls", x => x.Id);
+                    table.PrimaryKey("PK_HouseImageUrls", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ImageUrls_Lands_LandId",
+                        name: "FK_HouseImageUrls_Houses_HouseId",
+                        column: x => x.HouseId,
+                        principalTable: "Houses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LandImageUrls",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LandId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LandImageUrls", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_LandImageUrls_Lands_LandId",
                         column: x => x.LandId,
                         principalTable: "Lands",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "WorkPlaceImageUrls",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WorkPlaceId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WorkPlaceImageUrls", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ImageUrls_WorkPlaces_WorkPlaceId",
+                        name: "FK_WorkPlaceImageUrls_WorkPlaces_WorkPlaceId",
                         column: x => x.WorkPlaceId,
                         principalTable: "WorkPlaces",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Locations",
+                columns: new[] { "Id", "CityName", "DistrictName" },
+                values: new object[,]
+                {
+                    { 1, "karaman", "merkez" },
+                    { 12, "mersin", "toroslar" },
+                    { 11, "mersin", "mut" },
+                    { 10, "mersin", "çiftlikköy" },
+                    { 8, "mersin", "silifke" },
+                    { 7, "mersin", "mezitli" },
+                    { 9, "mersin", "yenişehir" },
+                    { 5, "konya", "meram" },
+                    { 4, "karaman", "kazımkarabekir" },
+                    { 3, "karaman", "ermenek" },
+                    { 2, "karaman", "Ayrancı" },
+                    { 6, "konya", "selçuklu" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "SalesCategories",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 9, "dükkan" },
+                    { 13, "büro" },
+                    { 12, "plaza" },
+                    { 11, "fabrika" },
+                    { 10, "ofis" },
+                    { 8, "zeytinlik" },
+                    { 3, "site" },
+                    { 6, "tarla" },
+                    { 5, "yazlık" },
+                    { 4, "villa" },
+                    { 2, "müstakil" },
+                    { 1, "apartman" },
+                    { 7, "bağ" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "SalesTypes",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 3, "günlük kiralık" },
+                    { 1, "satılık" },
+                    { 2, "kiralık" },
+                    { 4, "sezonluk" }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HouseImageUrls_HouseId",
+                table: "HouseImageUrls",
+                column: "HouseId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Houses_LocationId",
                 table: "Houses",
-                column: "LocationId",
-                unique: true,
-                filter: "[LocationId] IS NOT NULL");
+                column: "LocationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Houses_SalesCategoryId",
@@ -239,21 +325,14 @@ namespace DataAccess.Migrations
                 column: "SalesTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ImageUrls_LandId",
-                table: "ImageUrls",
+                name: "IX_LandImageUrls_LandId",
+                table: "LandImageUrls",
                 column: "LandId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ImageUrls_WorkPlaceId",
-                table: "ImageUrls",
-                column: "WorkPlaceId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lands_LocationId",
                 table: "Lands",
-                column: "LocationId",
-                unique: true,
-                filter: "[LocationId] IS NOT NULL");
+                column: "LocationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lands_SalesCategoryId",
@@ -271,11 +350,14 @@ namespace DataAccess.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_WorkPlaceImageUrls_WorkPlaceId",
+                table: "WorkPlaceImageUrls",
+                column: "WorkPlaceId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_WorkPlaces_LocationId",
                 table: "WorkPlaces",
-                column: "LocationId",
-                unique: true,
-                filter: "[LocationId] IS NOT NULL");
+                column: "LocationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WorkPlaces_SalesCategoryId",
@@ -291,22 +373,28 @@ namespace DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Houses");
+                name: "HouseImageUrls");
 
             migrationBuilder.DropTable(
-                name: "ImageUrls");
+                name: "LandImageUrls");
 
             migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
+                name: "WorkPlaceImageUrls");
+
+            migrationBuilder.DropTable(
+                name: "Houses");
+
+            migrationBuilder.DropTable(
                 name: "Lands");
 
             migrationBuilder.DropTable(
-                name: "WorkPlaces");
+                name: "Roles");
 
             migrationBuilder.DropTable(
-                name: "Roles");
+                name: "WorkPlaces");
 
             migrationBuilder.DropTable(
                 name: "Locations");

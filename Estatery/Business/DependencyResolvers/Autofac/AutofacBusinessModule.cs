@@ -1,7 +1,10 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
 using Business.Converter;
+using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using System;
@@ -25,7 +28,8 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<SalesTypeManager>().As<ISalesTypeService>().SingleInstance();
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<RoleManager>().As<IRoleService>().SingleInstance();
-            builder.RegisterType<ImageUrlManager>().As<IImageUrlService>().SingleInstance();
+            builder.RegisterType<HouseImageUrlManager>().As<IHouseImageUrlService>().SingleInstance();
+
             // Business Converter
             builder.RegisterType<HouseConverter>().As<IHouseConverter>().SingleInstance();
             builder.RegisterType<LocationConverter>().As<ILocationConverter>().SingleInstance();
@@ -41,7 +45,14 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfSalesTypeDal>().As<ISalesTypeDal>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
             builder.RegisterType<EfRoleDal>().As<IRoleDal>().SingleInstance();
-            builder.RegisterType<EfImageUrlDal>().As<IImageUrlDal>().SingleInstance();
+            builder.RegisterType<EfHouseImageUrlDal>().As<IHouseImageUrlDal>().SingleInstance();
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector = new AspectInterceptorSelector()
+                }).SingleInstance();
         }
     }
 }

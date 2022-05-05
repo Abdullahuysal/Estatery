@@ -13,7 +13,7 @@ namespace Entities.Concrete
         public int NumberOfRooms { get; set; }
         public int NumberOfBath { get; set; }
         public int SquareMeter { get; set; }
-      
+        public ICollection<HouseImageUrl> HouseImageUrls { get; set; }
     }
 
 }

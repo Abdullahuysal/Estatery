@@ -73,7 +73,12 @@ D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\WebAPI.runtimeconfig.dev.jso
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\WebAPI.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\ref\WebAPI.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\WebAPI.pdb
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Autofac.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Autofac.Extras.DynamicProxy.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\AutoMapper.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Castle.Core.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\FluentValidation.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll

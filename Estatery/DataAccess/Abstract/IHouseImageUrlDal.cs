@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IImageUrlDal:IEntityRepository<ImageUrl>
+    public interface IHouseImageUrlDal: IEntityRepository<HouseImageUrl>
     {
-
     }
 }

@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "JzkfL3w125TvMMQTjQo6XcrhDqbo9A8tEXSsadIW6x4vQSBDD/sKbKmYLDBZiFpVmItmcgr/aJ4VEb+Of9MI+Q==",
+  "dgSpecHash": "Wl7rmAnLg9UmtYKeQCxiZKnCdZYVnO5VlS+gfpunKG1/vTbqhyUBhuPKh8vzSQhQXORbk2Jtyw33VQLhVewVCw==",
   "success": true,
   "projectFilePath": "D:\\github\\Estatery\\Estatery\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uysal\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.2.0\\autofac.extensions.dependencyinjection.7.2.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

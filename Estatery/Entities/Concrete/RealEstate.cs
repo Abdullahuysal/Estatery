@@ -19,6 +19,6 @@ namespace Entities.Concrete
         public SalesCategory SalesCategory { get; set; }
         public Location Location { get; set; }
         public SalesType SalesType { get; set; }
-     
+
     }
 }

@@ -37,7 +37,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 688, DateTimeKind.Local).AddTicks(2472));
+                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 508, DateTimeKind.Local).AddTicks(8153));
 
                     b.Property<int?>("LocationId")
                         .HasColumnType("int");
@@ -60,13 +60,11 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 689, DateTimeKind.Local).AddTicks(6380));
+                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 513, DateTimeKind.Local).AddTicks(2293));
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationId")
-                        .IsUnique()
-                        .HasFilter("[LocationId] IS NOT NULL");
+                    b.HasIndex("LocationId");
 
                     b.HasIndex("SalesCategoryId");
 
@@ -75,31 +73,24 @@ namespace DataAccess.Migrations
                     b.ToTable("Houses");
                 });
 
-            modelBuilder.Entity("Entities.Concrete.ImageUrl", b =>
+            modelBuilder.Entity("Entities.Concrete.HouseImageUrl", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("LandId")
+                    b.Property<int?>("HouseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<int?>("WorkPlaceId")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LandId");
+                    b.HasIndex("HouseId");
 
-                    b.HasIndex("WorkPlaceId");
-
-                    b.ToTable("ImageUrls");
+                    b.ToTable("HouseImageUrls");
                 });
 
             modelBuilder.Entity("Entities.Concrete.Land", b =>
@@ -117,7 +108,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(7788));
+                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(7327));
 
                     b.Property<int?>("LocationId")
                         .HasColumnType("int");
@@ -137,19 +128,37 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 690, DateTimeKind.Local).AddTicks(8352));
+                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(8697));
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationId")
-                        .IsUnique()
-                        .HasFilter("[LocationId] IS NOT NULL");
+                    b.HasIndex("LocationId");
 
                     b.HasIndex("SalesCategoryId");
 
                     b.HasIndex("SalesTypeId");
 
                     b.ToTable("Lands");
+                });
+
+            modelBuilder.Entity("Entities.Concrete.LandImageUrl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("LandId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LandId");
+
+                    b.ToTable("LandImageUrls");
                 });
 
             modelBuilder.Entity("Entities.Concrete.Location", b =>
@@ -172,6 +181,80 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Locations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CityName = "karaman",
+                            DistrictName = "merkez"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityName = "karaman",
+                            DistrictName = "Ayrancı"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityName = "karaman",
+                            DistrictName = "ermenek"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CityName = "karaman",
+                            DistrictName = "kazımkarabekir"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CityName = "konya",
+                            DistrictName = "meram"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CityName = "konya",
+                            DistrictName = "selçuklu"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CityName = "mersin",
+                            DistrictName = "mezitli"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CityName = "mersin",
+                            DistrictName = "silifke"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CityName = "mersin",
+                            DistrictName = "yenişehir"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CityName = "mersin",
+                            DistrictName = "çiftlikköy"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CityName = "mersin",
+                            DistrictName = "mut"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CityName = "mersin",
+                            DistrictName = "toroslar"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.Role", b =>
@@ -206,6 +289,73 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SalesCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "apartman"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "müstakil"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "site"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "villa"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "yazlık"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "tarla"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "bağ"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "zeytinlik"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "dükkan"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "ofis"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "fabrika"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "plaza"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "büro"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.SalesType", b =>
@@ -223,6 +373,28 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SalesTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "satılık"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "kiralık"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "günlük kiralık"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "sezonluk"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.User", b =>
@@ -283,7 +455,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8246));
+                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(8627));
 
                     b.Property<int?>("LocationId")
                         .HasColumnType("int");
@@ -303,13 +475,11 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 4, 28, 16, 33, 3, 691, DateTimeKind.Local).AddTicks(8812));
+                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(9700));
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationId")
-                        .IsUnique()
-                        .HasFilter("[LocationId] IS NOT NULL");
+                    b.HasIndex("LocationId");
 
                     b.HasIndex("SalesCategoryId");
 
@@ -318,11 +488,31 @@ namespace DataAccess.Migrations
                     b.ToTable("WorkPlaces");
                 });
 
+            modelBuilder.Entity("Entities.Concrete.WorkPlaceImageUrl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("WorkPlaceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkPlaceId");
+
+                    b.ToTable("WorkPlaceImageUrls");
+                });
+
             modelBuilder.Entity("Entities.Concrete.House", b =>
                 {
                     b.HasOne("Entities.Concrete.Location", "Location")
-                        .WithOne("House")
-                        .HasForeignKey("Entities.Concrete.House", "LocationId")
+                        .WithMany("Houses")
+                        .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Entities.Concrete.SalesCategory", "SalesCategory")
@@ -342,22 +532,18 @@ namespace DataAccess.Migrations
                     b.Navigation("SalesType");
                 });
 
-            modelBuilder.Entity("Entities.Concrete.ImageUrl", b =>
+            modelBuilder.Entity("Entities.Concrete.HouseImageUrl", b =>
                 {
-                    b.HasOne("Entities.Concrete.Land", null)
-                        .WithMany("ImageUrls")
-                        .HasForeignKey("LandId");
-
-                    b.HasOne("Entities.Concrete.WorkPlace", null)
-                        .WithMany("ImageUrls")
-                        .HasForeignKey("WorkPlaceId");
+                    b.HasOne("Entities.Concrete.House", null)
+                        .WithMany("HouseImageUrls")
+                        .HasForeignKey("HouseId");
                 });
 
             modelBuilder.Entity("Entities.Concrete.Land", b =>
                 {
                     b.HasOne("Entities.Concrete.Location", "Location")
-                        .WithOne("Land")
-                        .HasForeignKey("Entities.Concrete.Land", "LocationId")
+                        .WithMany("Lands")
+                        .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Entities.Concrete.SalesCategory", "SalesCategory")
@@ -375,6 +561,13 @@ namespace DataAccess.Migrations
                     b.Navigation("SalesCategory");
 
                     b.Navigation("SalesType");
+                });
+
+            modelBuilder.Entity("Entities.Concrete.LandImageUrl", b =>
+                {
+                    b.HasOne("Entities.Concrete.Land", null)
+                        .WithMany("LandImageUrls")
+                        .HasForeignKey("LandId");
                 });
 
             modelBuilder.Entity("Entities.Concrete.User", b =>
@@ -389,8 +582,8 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Entities.Concrete.WorkPlace", b =>
                 {
                     b.HasOne("Entities.Concrete.Location", "Location")
-                        .WithOne("WorkPlace")
-                        .HasForeignKey("Entities.Concrete.WorkPlace", "LocationId")
+                        .WithMany("WorkPlaces")
+                        .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Entities.Concrete.SalesCategory", "SalesCategory")
@@ -410,18 +603,30 @@ namespace DataAccess.Migrations
                     b.Navigation("SalesType");
                 });
 
+            modelBuilder.Entity("Entities.Concrete.WorkPlaceImageUrl", b =>
+                {
+                    b.HasOne("Entities.Concrete.WorkPlace", null)
+                        .WithMany("WorkPlaceImageUrls")
+                        .HasForeignKey("WorkPlaceId");
+                });
+
+            modelBuilder.Entity("Entities.Concrete.House", b =>
+                {
+                    b.Navigation("HouseImageUrls");
+                });
+
             modelBuilder.Entity("Entities.Concrete.Land", b =>
                 {
-                    b.Navigation("ImageUrls");
+                    b.Navigation("LandImageUrls");
                 });
 
             modelBuilder.Entity("Entities.Concrete.Location", b =>
                 {
-                    b.Navigation("House");
+                    b.Navigation("Houses");
 
-                    b.Navigation("Land");
+                    b.Navigation("Lands");
 
-                    b.Navigation("WorkPlace");
+                    b.Navigation("WorkPlaces");
                 });
 
             modelBuilder.Entity("Entities.Concrete.Role", b =>
@@ -449,7 +654,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.Concrete.WorkPlace", b =>
                 {
-                    b.Navigation("ImageUrls");
+                    b.Navigation("WorkPlaceImageUrls");
                 });
 #pragma warning restore 612, 618
         }

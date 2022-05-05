@@ -27,6 +27,7 @@ namespace Business.Converter
             Location location = new Location();
             SalesType salesType = new SalesType();
             SalesCategory salesCategory = new SalesCategory();
+            List<HouseImageUrl> houseImageUrls = new List<HouseImageUrl>();
             house.CreatedAt = DateTime.Now;
             house.UpdatedAt = DateTime.Now;
             house.Advertiser = houseRequest.Advertiser;
@@ -38,6 +39,14 @@ namespace Business.Converter
             location.DistrictName = houseRequest.Location.DistrictName;
             salesType.Name = houseRequest.SalesType.Name;
             salesCategory.Name = houseRequest.SalesCategory.Name;
+            foreach (var url in houseRequest.ImageUrls.Name)
+            {
+                HouseImageUrl houseImageUrl = new HouseImageUrl();
+                houseImageUrl.Name = url;
+                houseImageUrls.Add(houseImageUrl);
+            }
+
+            house.HouseImageUrls = houseImageUrls;
             house.Location= location;
             house.SalesType = salesType;
             house.SalesCategory = salesCategory;

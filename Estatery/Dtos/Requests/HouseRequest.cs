@@ -12,6 +12,7 @@ namespace Dtos.Requests
         public SalesTypeRequest SalesType { get; set; }
         public SalesCategoryRequest SalesCategory { get; set; }
         public LocationRequest Location { get; set; }
+        public HouseImageUrlRequest ImageUrls { get; set; }
         public string Advertiser { get; set; }
         public int ConstructionYear { get; set; }
         public int NumberOfRooms { get; set; }

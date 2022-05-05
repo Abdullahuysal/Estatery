@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Converter;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Dtos.Requests;
@@ -20,21 +22,25 @@ namespace Business.Concrete
         private ILocationService _locationService;
         private ISalesCategoryService _salesCategoryService;
         private ISalesTypeService _salesTypeService;
+        private IHouseImageUrlService _houseImageUrlService;
 
-        public HouseManager(IHouseDal houseDal,IHouseConverter houseConverter,ILocationService locationService,ISalesCategoryService salesCategoryService,ISalesTypeService salesTypeService)
+        public HouseManager(IHouseDal houseDal,IHouseConverter houseConverter,ILocationService locationService,ISalesCategoryService salesCategoryService,ISalesTypeService salesTypeService, IHouseImageUrlService houseImageUrlService)
         {
             _houseDal = houseDal;
             _houseConverter = houseConverter;
             _locationService = locationService;
             _salesCategoryService = salesCategoryService;
             _salesTypeService = salesTypeService;
+            _houseImageUrlService = houseImageUrlService;
         }
 
+        [ValidationAspect(typeof(HouseValidator))]
         public async Task<IResult> AddHouse(HouseRequest houseRequest)
         { 
             var house = _houseConverter.HouseDtoToHouse(houseRequest);
             house =await FindHomeRelatedInformation(house);
             await _houseDal.AddAsync(house);
+            await AddImageUrlToTable(house.HouseImageUrls,house);
             return new SuccessResult();
         }
 
@@ -50,12 +56,20 @@ namespace Business.Concrete
             var location = await _locationService.GetLocation(house.Location.CityName, house.Location.DistrictName);
             var salesCategory = await _salesCategoryService.GetSalesCategory(house.SalesCategory.Name);
             var salesType = await _salesTypeService.GetSalesType(house.SalesType.Name);
+           
             house.LocationId = location.Data.Id;
             house.SalesCategoryId = salesCategory.Data.Id;
             house.SalesTypeId = salesType.Data.Id;
             return house;
         }
-
+        private async Task AddImageUrlToTable(ICollection<HouseImageUrl> imageUrls,House house)
+        {
+            foreach (var imageUrl in imageUrls)
+            {
+                imageUrl.House = house;     
+                await _houseImageUrlService.AddHouseImageUrl(imageUrl);
+            }
+        }
         public Task<IDataResult<ICollection<House>>> GetAllHouses()
         {
             throw new NotImplementedException();
