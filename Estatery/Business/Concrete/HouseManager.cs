@@ -40,7 +40,8 @@ namespace Business.Concrete
             var house = _houseConverter.HouseDtoToHouse(houseRequest);
             house =await FindHomeRelatedInformation(house);
             await _houseDal.AddAsync(house);
-            await AddImageUrlToTable(house.HouseImageUrls,house);
+            await AddImageUrlToTable(house.HouseImageUrls, house);
+
             return new SuccessResult();
         }
 
@@ -70,9 +71,10 @@ namespace Business.Concrete
                 await _houseImageUrlService.AddHouseImageUrl(imageUrl);
             }
         }
-        public Task<IDataResult<ICollection<House>>> GetAllHouses()
+        public async Task<List<House>>  GetAllHouses()
         {
-            throw new NotImplementedException();
+            var house = await _houseDal.GetAllAsync();
+            return house; 
         }
 
         public Task<IResult> UpdateHouse(HouseRequest houseRequest)

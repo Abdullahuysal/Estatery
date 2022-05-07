@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dtos.Requests;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,16 @@ namespace Web.Controllers
 {
     public class UserController : Controller
     {
-
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult LoginPage()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult LoginPage(UserLoginRequest userLoginRequest)
+        {
+
+            return Redirect("https://www.youtube.com/");
         }
     }
 }

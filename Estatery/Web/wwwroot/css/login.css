@@ -1,0 +1,58 @@
+﻿body {
+    font-family: 'Titillium Web', sans-serif;
+    background-image: url('../Images/Login.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form {
+    background: #DAC5B0;
+    padding: 10px;
+    max-width: 500px;
+    height: 290px;
+    margin: 250px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px #13232f;
+    opacity: 0.8;
+}
+.text_box {
+    font-size: 22px;
+    display: block;
+    width: 96%;
+    height: 50px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #BC9160;
+    color: #431901;
+    border-radius: 0;
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
+h1 {
+    text-align: center;
+    color: #54482D;
+    font-weight: 700;
+    margin: 0 0 10px;
+    padding-top: 20px;
+}
+.submit-button {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 5px 5px;
+    margin-top:5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #54482D;
+    color: #ffffff;
+    display: block;
+    width: 100%;
+}
+    .submit-button:hover {
+        background: #ffffff;
+        color: #54482D;
+    }
+

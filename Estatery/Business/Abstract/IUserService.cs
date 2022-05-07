@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Core.Utilities.Results;
+using Dtos.Requests;
+using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +11,7 @@ namespace Business.Abstract
 {
     public interface IUserService
     {
-
+        Task<IDataResult<User>> ValidateUser(UserLoginRequest userLoginRequest);
+        Task<IDataResult<User>> SignupUser(UserSignupRequest userSignupRequest);
     }
 }

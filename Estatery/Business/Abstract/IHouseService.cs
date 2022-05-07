@@ -12,7 +12,7 @@ namespace Business.Abstract
 {
     public interface IHouseService
     {
-        Task<IDataResult<ICollection<House>>> GetAllHouses();
+        Task<List<House>> GetAllHouses();
         Task<House> FindHomeRelatedInformation(House house);
         Task<IResult> AddHouse(HouseRequest HouseRequest);
         Task<IResult> UpdateHouse(HouseRequest houseRequest);

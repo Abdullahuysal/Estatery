@@ -23,11 +23,7 @@ namespace WebAPI.Controllers
         public IActionResult GetAllHouses()
         {
             var result = _houseService.GetAllHouses();
-            if (result.Result.Success)
-            {
-                return Ok(result.Result.Data);
-            }
-            return BadRequest(result.Result);
+            return Ok(result.Result);
         }
         [HttpPost("addhouse")]
         public IActionResult AddHouse(HouseRequest houseRequest)

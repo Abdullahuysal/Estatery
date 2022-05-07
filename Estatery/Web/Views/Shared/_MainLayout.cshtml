@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style-search.css">
+    <link href="~/css/Main.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <nav id="top-nav">
+            <div class="nav-logo">
+                <i class="fas fa-map-pin" style="margin-right: 3px;"></i>
+                REAL ESTATERY
+            </div>
+            <div class="nav-options">
+                <ul>
+                    <li>Satılık</li>
+                    <li>Kiralık</li>
+                    <li>Yıllık</li>
+                </ul>
+            </div>
+        </nav>
+
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿body {
+
+}
+#top-nav {
+  display: flex;
+  height: 70px;
+  background-color: #BC9160;
+  color: #fff;
+  vertical-align: middle;
+  line-height: 25px;
+}
+.nav-logo {
+  flex: 1;
+  text-align: center;
+  line-height: 80px;
+  padding-left: 40px;
+  font-size: 16px;
+}
+
+.nav-options {
+  flex: 8;
+  color: whitesmoke;
+}
+.nav-options ul li {
+  margin: 10px 80px 50px 50px;
+  display: inline-block;
+  cursor: pointer;
+}
+li{
+    display:block;
+}
+    li:hover {
+        color: #BC9160;
+        background-color: whitesmoke;
+    }
