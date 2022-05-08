@@ -1,8 +1,15 @@
-﻿
+﻿@model IEnumerable<Entities.Concrete.House>
 @{
     ViewData["Title"] = "HomePage";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="mycard">
+            <partial name="_realEstateCard" model="@item"/>
+        </div>
+    }
+</div>
 

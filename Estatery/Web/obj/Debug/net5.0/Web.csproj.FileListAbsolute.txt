@@ -154,3 +154,11 @@ D:\github\Estatery\Estatery\Web\bin\Debug\net5.0\Entities.pdb
 D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\User\LoginPage.cshtml.g.cs
 D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Shared\_MainLayout.cshtml.g.cs
 D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Home\HomePage.cshtml.g.cs
+D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\User\SignupPage.cshtml.g.cs
+D:\github\Estatery\Estatery\Web\bin\Debug\net5.0\AutoMapper.dll
+D:\github\Estatery\Estatery\Web\bin\Debug\net5.0\Business.dll
+D:\github\Estatery\Estatery\Web\bin\Debug\net5.0\DataAccess.dll
+D:\github\Estatery\Estatery\Web\bin\Debug\net5.0\Business.pdb
+D:\github\Estatery\Estatery\Web\bin\Debug\net5.0\DataAccess.pdb
+D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Shared\_realEstateCard.cshtml.g.cs
+D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Home\Create.cshtml.g.cs

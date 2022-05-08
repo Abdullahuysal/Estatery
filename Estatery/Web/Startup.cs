@@ -24,6 +24,7 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,13 +49,9 @@ namespace Web
 
             app.UseEndpoints(endpoints =>
             {
-
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=HomePage}" );
-                endpoints.MapControllerRoute(
-                    name: "xxx",
-                    pattern: "{controller=User}/{action=LoginPage}/{id?}");
+                   name: "default",
+                   pattern: "{controller=User}/{action=SignupPage}");
             });
         }
     }

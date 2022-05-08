@@ -1,0 +1,11 @@
+﻿
+@model Entities.Concrete.House
+<div class="card">
+    <img src="@Model.HouseImageUrls" class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="card-text">@Model.NumberOfBath</p>
+        <p class="card-text">@Model.NumberOfRooms</p>
+
+        <a href="#" class="btn btn-primary sepet" data-id="@Model.Id">İncele</a>
+    </div>
+</div>

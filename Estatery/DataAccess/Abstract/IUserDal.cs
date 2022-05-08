@@ -10,6 +10,6 @@ namespace DataAccess.Abstract
 {
     public interface IUserDal:IEntityRepository<User>
     {
-
+        Task<bool> CheckUserEmailIsExist(string Email);
     }
 }

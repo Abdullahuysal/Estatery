@@ -9,6 +9,7 @@ namespace Dtos.Responses
 {
     public class HouseResponse
     {
+
         public string Advertiser { get; set; }
         public int ConstructionYear { get; set; }
         public int NumberOfRooms { get; set; }

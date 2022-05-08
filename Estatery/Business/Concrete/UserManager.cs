@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.Converter;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Dtos.Requests;
@@ -23,17 +25,16 @@ namespace Business.Concrete
             _userDal = userDal;
             _userConverter = userConverter;
         }
-
+        [ValidationAspect(typeof(UserValidator))]
         public async Task<IDataResult<User>> SignupUser(UserSignupRequest userSignupRequest)
         {
-            User newUser = _userConverter.UserRequestToUser(userSignupRequest);
-            var result = IsExist(newUser);
-            if (result != null)
+            if (await IsExistUserEmail(userSignupRequest.Email))
             {
-                await _userDal.AddAsync(newUser);
-                return new SuccessDataResult<User>(newUser, BusinessMessages.AddSuccessfull);
+                return new ErrorDataResult<User>(BusinessMessages.AddFailed);
             }
-            return new ErrorDataResult<User>(BusinessMessages.AddFailed);
+            User newUser = _userConverter.UserRequestToUser(userSignupRequest);
+            await _userDal.AddAsync(newUser);
+            return new SuccessDataResult<User>(newUser, BusinessMessages.AddSuccessfull);
             
         }
 
@@ -50,11 +51,9 @@ namespace Business.Concrete
         {
             return await _userDal.GetAsync(u => u.Email == email && u.Password == password);
         }
-        private async Task<User> IsExist(User user)
+        private async Task<bool> IsExistUserEmail(string UserEmail)
         {
-            var result = await _userDal.GetAsync(u => u.Email == user.Email);
-            if (result!=null) return null;
-            return result;
+            return await _userDal.CheckUserEmailIsExist(UserEmail);
         }
     }
 }

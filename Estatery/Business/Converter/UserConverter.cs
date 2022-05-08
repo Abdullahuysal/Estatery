@@ -14,11 +14,14 @@ namespace Business.Converter
         public User UserRequestToUser(UserSignupRequest userSignupRequest)
         {
             User user = new User();
+            Role role = new Role();
             user.FirstName = userSignupRequest.FirstName;
             user.SecondName = userSignupRequest.SecondName;
             user.Email = userSignupRequest.Email;
             user.Password = userSignupRequest.Password;
             user.Active = true;
+            role.Name = "kullanıcı";
+            user.Role = role;
             user.RoleId = 1;
             return user;
         }

@@ -73,8 +73,8 @@ namespace Business.Concrete
         }
         public async Task<List<House>>  GetAllHouses()
         {
-            var house = await _houseDal.GetAllAsync();
-            return house; 
+            List<House> houses = await _houseDal.GetAllAsync();
+            return houses; 
         }
 
         public Task<IResult> UpdateHouse(HouseRequest houseRequest)

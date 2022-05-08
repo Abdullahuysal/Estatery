@@ -22,14 +22,25 @@
   color: whitesmoke;
 }
 .nav-options ul li {
-  margin: 10px 80px 50px 50px;
+  margin: 25px 80px 50px 50px;
   display: inline-block;
   cursor: pointer;
 }
 li{
     display:block;
 }
-    li:hover {
+    li:hover { 
         color: #BC9160;
         background-color: whitesmoke;
+    }
+.mycard {
+    width: 25%;
+    margin-left:100px;
+    margin-top:80px;
+    display: inline-block;
+}
+
+
+    .card{
+
     }

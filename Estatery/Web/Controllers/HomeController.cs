@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Abstract;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,23 @@ namespace Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private IHouseService _houseService;
+        private ILandService _landService;
+        private IWorkPlaceService _workplaceService;
+        public HomeController(ILogger<HomeController> logger,IHouseService houseService,ILandService landService,IWorkPlaceService workPlaceService)
         {
             _logger = logger;
+            _houseService = houseService;
+            _landService = landService;
+            _workplaceService = workPlaceService;
         }
 
-        public IActionResult HomePage()
+        public async Task<IActionResult> HomePage()
+        {
+            var houses=await _houseService.GetAllHouses();
+            return View(houses);
+        }
+        public IActionResult Create()
         {
             return View();
         }
