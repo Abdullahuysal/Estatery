@@ -35,9 +35,7 @@ namespace Business.Concrete
             User newUser = _userConverter.UserRequestToUser(userSignupRequest);
             await _userDal.AddAsync(newUser);
             return new SuccessDataResult<User>(newUser, BusinessMessages.AddSuccessfull);
-            
         }
-
         public async Task<IDataResult<User>> ValidateUser(UserLoginRequest userLoginRequest)
         {
            var user=await FindUserInfo(userLoginRequest.Email, userLoginRequest.Password);

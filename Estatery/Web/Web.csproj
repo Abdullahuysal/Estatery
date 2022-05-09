@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Screenshoots\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 

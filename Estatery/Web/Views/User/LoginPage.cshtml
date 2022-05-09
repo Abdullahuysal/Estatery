@@ -10,11 +10,12 @@
 <body>
     <form asp-action="LoginPage" method="post">
         <div class="form">
+            <div class="validation" asp-validation-summary="All"></div>
             <h1>Real Estatery Giriş Yap</h1>
-            <input asp-for="Email" class="text_box" placeholder="E-mail Adres(example@gmail.com)" type="email"/>
-            <input asp-for="Password" class="text_box" placeholder="Şifre" type="password"/>
+            <input asp-for="Email" class="text_box" placeholder="E-mail Adres(example@gmail.com)" type="email" />
+            <input asp-for="Password" class="text_box" placeholder="Şifre" type="password" />
             <div class="form-group">
-                <input  class="submit-button" type="submit" value="Giriş Yap"/>
+                <input class="submit-button" type="submit" value="Giriş Yap" />
             </div>
 
         </div>
