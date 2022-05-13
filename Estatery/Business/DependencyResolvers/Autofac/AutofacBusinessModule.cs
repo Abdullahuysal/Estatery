@@ -40,6 +40,7 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<SalesTypeConverter>().As<ISalesTypeConverter>().SingleInstance();
             builder.RegisterType<SalesCategoryConverter>().As<ISalesCategoryConverter>().SingleInstance();
             builder.RegisterType<UserConverter>().As<IUserConverter>().SingleInstance();
+            builder.RegisterType<WorkPlaceConverter>().As<IWorkPlaceConverter>().SingleInstance();
 
             //DataAccess
             builder.RegisterType<EfHouseDal>().As<IHouseDal>().SingleInstance();

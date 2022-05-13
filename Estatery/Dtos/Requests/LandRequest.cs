@@ -13,9 +13,7 @@ namespace Dtos.Requests
         public LocationRequest Location { get; set; }
         public LandImageUrlRequest ImageUrls { get; set; }
         public string Advertiser { get; set; }
-        public int ConstructionYear { get; set; }
-        public int NumberOfRooms { get; set; }
-        public int NumberOfBath { get; set; }
         public int SquareMeter { get; set; }
+
     }
 }

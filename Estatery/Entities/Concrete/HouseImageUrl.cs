@@ -11,6 +11,6 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public House House { get; set; }
+        public virtual House House { get; set; }
     }
 }

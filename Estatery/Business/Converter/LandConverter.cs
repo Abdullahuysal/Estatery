@@ -14,11 +14,13 @@ namespace Business.Converter
         private ILocationService _locationService;
         private ISalesCategoryService _salesCategoryService;
         private ISalesTypeService _salesTypeService;
-        public LandConverter(ILocationService locationService, ISalesCategoryService salesCategoryService, ISalesTypeService salesTypeService)
+        private ILandImageUrlService _landImageUrlService;
+        public LandConverter(ILocationService locationService, ISalesCategoryService salesCategoryService, ISalesTypeService salesTypeService, ILandImageUrlService landImageUrlService)
         {
             _locationService = locationService;
             _salesCategoryService = salesCategoryService;
             _salesTypeService = salesTypeService;
+            _landImageUrlService = landImageUrlService;
         }
         public Land LandDtoToLand(LandRequest landRequest)
         {
@@ -30,14 +32,11 @@ namespace Business.Converter
             land.CreatedAt= DateTime.Now;
             land.UpdatedAt= DateTime.Now;
             land.Advertiser = landRequest.Advertiser;
-            land.ConstructionYear = land.ConstructionYear;
-            land.NumberOfBath = land.NumberOfBath;
-            land.NumberOfRooms = land.NumberOfRooms;
-            land.SquareMeter = land.SquareMeter;
-            location.CityName = land.Location.CityName;
-            location.DistrictName = land.Location.DistrictName;
-            salesType.Name = land.SalesType.Name;
-            salesCategory.Name = land.SalesCategory.Name;
+            land.SquareMeter = landRequest.SquareMeter;
+            location.CityName = landRequest.Location.CityName;
+            location.DistrictName = landRequest.Location.DistrictName;
+            salesType.Name = landRequest.SalesType.Name;
+            salesCategory.Name = landRequest.SalesCategory.Name;
             foreach (var url in landRequest.ImageUrls.Name)
             {
                 LandImageUrl landImageUrl = new LandImageUrl();
@@ -49,6 +48,27 @@ namespace Business.Converter
             land.SalesCategory = salesCategory;
             land.SalesType = salesType;
             return land;
+        }
+
+        public async Task<Land> landtoLandDetail(Land land)
+        {
+            var landlocation = new Location();
+            var landsalescategory = new SalesCategory();
+            var landsalestype = new SalesType();
+            var landimageUrls = new List<LandImageUrl>();
+            landlocation = await _locationService.GetLocationById(land.LocationId);
+            landsalescategory = await _salesCategoryService.GetSalesCategoryById(land.SalesCategoryId);
+            landsalestype = await _salesTypeService.GetSalesTypeById(land.SalesTypeId);
+            landimageUrls = await _landImageUrlService.GetLandImageUrlById(land.Id);
+            land.Location = landlocation;
+            land.SalesCategory = landsalescategory;
+            land.SalesType = landsalestype;
+            land.LandImageUrls = landimageUrls;
+            return land;
+        }
+            public Task<Land> LandUpdateRequestToLand(LandUpdateRequest landUpdateRequest)
+        {
+            throw new NotImplementedException();
         }
     }
 }

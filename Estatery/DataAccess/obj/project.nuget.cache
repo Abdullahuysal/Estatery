@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Z7DeQhC0F8CTmgmITMxslU4BKmQebu+oWvO9AkoubFYERYzs4ZlY6aSTBcuezAqllJObAP+WMFKkWn9tKPua5A==",
+  "dgSpecHash": "cI3o388kIQ5dQuenz322npRbJbWbsz/iXU+n8kcej33yoMGA7R79ddFmEzKAt++x17+Uygu/+C84caQpJ4YfGA==",
   "success": true,
   "projectFilePath": "D:\\github\\Estatery\\Estatery\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uysal\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.2.0\\autofac.extensions.dependencyinjection.7.2.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
-    "C:\\Users\\uysal\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -17,6 +17,7 @@
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.15\\microsoft.entityframeworkcore.abstractions.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.15\\microsoft.entityframeworkcore.analyzers.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.15\\microsoft.entityframeworkcore.design.5.0.15.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\5.0.15\\microsoft.entityframeworkcore.proxies.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.15\\microsoft.entityframeworkcore.relational.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.15\\microsoft.entityframeworkcore.sqlserver.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.15\\microsoft.entityframeworkcore.tools.5.0.15.nupkg.sha512",

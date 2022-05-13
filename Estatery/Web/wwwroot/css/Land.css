@@ -1,0 +1,28 @@
+﻿body {
+}
+
+.form {
+    background: #DAC5B0;
+    padding: 10px;
+    max-width: 500px;
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px #13232f;
+    opacity: 0.8;
+}
+
+.form-group {
+    font-size: 15px;
+    display: block;
+    width: 96%;
+    height: 30px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #BC9160;
+    color: #431901;
+    border-radius: 0;
+    transition: border-color .25s ease, box-shadow .25s ease;
+}

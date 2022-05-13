@@ -33,6 +33,7 @@ namespace Web.Controllers
                 {
                     List<Claim> claims = new List<Claim>
                     {
+                        new Claim(ClaimTypes.Name,user.Result.Data.FirstName+user.Result.Data.SecondName),
                         new Claim(ClaimTypes.Email,user.Result.Data.Email)
                     };
                     ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -59,9 +60,16 @@ namespace Web.Controllers
             var result =await _userService.SignupUser(userSignupRequest);
             if (result!=null)
             {
-                Redirect("/Home/HomePage");
+                return Redirect("/User/LoginPage");
             }
-            return View();
+            ModelState.AddModelError("SignupPage", "Bu E posta adı zaten kullanılmakta");
+            return Redirect("User/SignupPage");
+           
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/Home/HomePage");
         }
     }
 }

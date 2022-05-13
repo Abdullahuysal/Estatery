@@ -18,14 +18,27 @@ namespace Business.Concrete
         {
             _salesTypeDal = salesTypeDal;
         }
-        public async Task<IDataResult<SalesType>> GetSalesType(string salesTypeName)
+
+        public async Task<List<SalesType>> GetAllSalesTypes()
+        {
+            var salestypes = await _salesTypeDal.GetAllAsync();
+            return salestypes;
+        }
+
+        public async Task<SalesType> GetSalesType(string salesTypeName)
         {
             SalesType salesType = await _salesTypeDal.GetAsync(s => s.Name == salesTypeName);
             if (salesType != null)
             {
-                return new SuccessDataResult<SalesType>(salesType);
+                return salesType;
             }
-            return new ErrorDataResult<SalesType>(BusinessMessages.SalesTypeNotFound);
+            return null;
+        }
+
+        public async Task<SalesType> GetSalesTypeById(int salesTypeId)
+        {
+            var salesType = await _salesTypeDal.GetAsync(s => s.Id == salesTypeId);
+            return salesType;
         }
     }
 }

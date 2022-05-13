@@ -19,7 +19,7 @@ namespace Entities.Concrete
         public bool? Active { get; set; } = true;
         
         //Navigation Properties
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
         public int? RoleId { get; set; }
     }
 }

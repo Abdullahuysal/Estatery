@@ -11,5 +11,6 @@ namespace Business.Abstract
     public interface IWorkPlaceImageUrlService
     {
         Task<IResult> AddWorkPlaceImageUrl(WorkPlaceImageUrl workPlaceImageUrl);
+        Task<List<WorkPlaceImageUrl>> GetWorkPlaceImageUrlById(int id);
     }
 }

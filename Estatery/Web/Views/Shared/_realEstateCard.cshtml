@@ -1,11 +1,19 @@
 ﻿
 @model Entities.Concrete.House
-<div class="card">
-    <img src="@Model.HouseImageUrls" class="card-img-top" alt="...">
-    <div class="card-body">
-        <p class="card-text">@Model.NumberOfBath</p>
-        <p class="card-text">@Model.NumberOfRooms</p>
 
-        <a href="#" class="btn btn-primary sepet" data-id="@Model.Id">İncele</a>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@Html.Raw(Model.HouseImageUrls.First().Name.ToString())" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title"></h5>
     </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">İlan Sahibi @Model.Advertiser.ToUpper()</li>
+        <li class="list-group-item">Yapım Yılı : @Model.ConstructionYear</li>
+        <li class="list-group-item">Lokasyonu @Model.Location.CityName / @Model.Location.DistrictName </li>
+        <li class="list-group-item">Bina Toplam : @Model.SquareMeter m2</li>
+        <li class="list-group-item">@Model.NumberOfRooms Oda <i class="fas fa-bed fa-style-on"></i>  @Model.NumberOfBath Banyolu <i class="fas fa-bath fa-bed-style-on"></i>  </li>
+        <li class="list-group-item">Kategori:@Model.SalesCategory.Name </li>
+        <li class="list-group-item">Tip:@Model.SalesType.Name </li>
+    </ul>
+      @Html.ActionLink("Edit", "Update", new { id = Model.Id }) 
 </div>

@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface ILandDal:IEntityRepository<Land>
+    public interface ILandDal : IEntityRepository<Land>
     {
-
+        Task<bool> IsExist(int id);
+        Task<Land> GetLandById(int id);
     }
 }

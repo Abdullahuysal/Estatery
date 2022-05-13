@@ -40,14 +40,26 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public async Task<IDataResult<Location>> GetLocation(string cityName, string districtName)
+        public async Task<List<Location>> GetAllLocations()
+        {
+            var locations = await _locationDal.GetAllAsync();
+            return locations;
+        }
+
+        public async Task<Location> GetLocation(string cityName, string districtName)
         {
             var location =await  _locationDal.GetAsync(l => l.CityName == cityName && l.DistrictName == districtName);
             if (location != null)
             {
-                return new SuccessDataResult<Location>(location);
+                return (location);
             }
-            return new ErrorDataResult<Location>(BusinessMessages.LocationNotFound);
+            return null;
+        }
+
+        public async Task<Location> GetLocationById(int locationId)
+        {
+            var location = await _locationDal.GetAsync(l => l.Id == locationId);
+            return location;
         }
 
         public Task<IResult> UpdateLocation(LocationRequest locationRequest)

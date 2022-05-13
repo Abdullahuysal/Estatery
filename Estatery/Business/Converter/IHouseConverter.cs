@@ -11,5 +11,7 @@ namespace Business.Converter
     public interface IHouseConverter
     {
         House HouseDtoToHouse(HouseRequest HouseRequest);
+        Task<House>housetohouseDetail(House house);
+        Task<House> HouseUpdateRequestTohouse(HouseUpdateRequest houseUpdateRequest);
     }
 }

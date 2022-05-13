@@ -10,8 +10,7 @@ namespace Entities.Concrete
     public class WorkPlace:RealEstate,IEntity
     {
         public int Price { get; set; }
-        public int SquareMeter { get; set; }
-        public ICollection<WorkPlaceImageUrl> WorkPlaceImageUrls { get; set; }
+        public virtual ICollection<WorkPlaceImageUrl> WorkPlaceImageUrls { get; set; }
 
     }
 }

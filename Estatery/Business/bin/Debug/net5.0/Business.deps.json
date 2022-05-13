@@ -45,7 +45,7 @@
       "Autofac.Extras.DynamicProxy/6.0.1": {
         "dependencies": {
           "Autofac": "6.3.0",
-          "Castle.Core": "4.4.0"
+          "Castle.Core": "4.4.1"
         },
         "runtime": {
           "lib/netstandard2.1/Autofac.Extras.DynamicProxy.dll": {
@@ -65,7 +65,7 @@
           }
         }
       },
-      "Castle.Core/4.4.0": {
+      "Castle.Core/4.4.1": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "System.Collections.Specialized": "4.3.0",
@@ -81,7 +81,7 @@
         "runtime": {
           "lib/netstandard1.5/Castle.Core.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.4.0.0"
+            "fileVersion": "4.4.1.0"
           }
         }
       },
@@ -199,6 +199,18 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/5.0.15": {},
+      "Microsoft.EntityFrameworkCore.Proxies/5.0.15": {
+        "dependencies": {
+          "Castle.Core": "4.4.1",
+          "Microsoft.EntityFrameworkCore": "5.0.15"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Proxies.dll": {
+            "assemblyVersion": "5.0.15.0",
+            "fileVersion": "5.0.1522.10812"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/5.0.15": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.15",
@@ -1462,8 +1474,10 @@
       "DataAccess/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
+          "Dtos": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.15",
+          "Microsoft.EntityFrameworkCore.Proxies": "5.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.15"
         },
         "runtime": {
@@ -1522,12 +1536,12 @@
       "path": "automapper/11.0.1",
       "hashPath": "automapper.11.0.1.nupkg.sha512"
     },
-    "Castle.Core/4.4.0": {
+    "Castle.Core/4.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
-      "path": "castle.core/4.4.0",
-      "hashPath": "castle.core.4.4.0.nupkg.sha512"
+      "sha512": "sha512-zanbjWC0Y05gbx4eGXkzVycOQqVOFVeCjVsDSyuao9P4mtN1w3WxxTo193NGC7j3o2u3AJRswaoC6hEbnGACnQ==",
+      "path": "castle.core/4.4.1",
+      "hashPath": "castle.core.4.4.1.nupkg.sha512"
     },
     "FluentValidation/10.4.0": {
       "type": "package",
@@ -1577,6 +1591,13 @@
       "sha512": "sha512-QfJBhr49Jmvt+zJf1VPSBPq2ZPY5PlpiDSF3UFV37joyKiWMDyEsNTHd3RLFzagC4k8cmSKTgk+7Y49XwDvPJQ==",
       "path": "microsoft.entityframeworkcore.analyzers/5.0.15",
       "hashPath": "microsoft.entityframeworkcore.analyzers.5.0.15.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Proxies/5.0.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-83uY+tflbteRSZssq6RLrjpM4a0NLX8fwEQfqctgvnOJ14YjLsIsooeG+DneAP9a59y0ZjtfKTGU51aj3oCapQ==",
+      "path": "microsoft.entityframeworkcore.proxies/5.0.15",
+      "hashPath": "microsoft.entityframeworkcore.proxies.5.0.15.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/5.0.15": {
       "type": "package",

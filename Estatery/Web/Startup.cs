@@ -1,3 +1,4 @@
+using Business.Mapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,7 @@ namespace Web
         {
             services.AddControllersWithViews();
             services.AddCors();
+            services.AddAutoMapper(typeof(MapProfile));
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(opt =>
                 {
@@ -56,7 +58,7 @@ namespace Web
             {
                 endpoints.MapControllerRoute(
                    name: "default",
-                   pattern: "{controller=User}/{action=SignupPage}");
+                   pattern: "{controller=Home}/{action=HomePage}");
             });
         }
     }

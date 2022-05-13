@@ -11,7 +11,9 @@ namespace Business.Abstract
 {
     public interface ILocationService
     {
-        Task<IDataResult<Location>> GetLocation(string cityName,string districtName);
+        Task<Location> GetLocation(string cityName,string districtName);
+        Task<List<Location>> GetAllLocations();
+        Task<Location> GetLocationById(int locationId);
         Task<IResult> AddLocation(LocationRequest locationRequest);
         Task<IResult> UpdateLocation(LocationRequest locationRequest);
         Task<IResult> DeleteLocation(LocationRequest locationRequest);

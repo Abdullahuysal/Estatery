@@ -11,6 +11,6 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public WorkPlace WorkPlace { get; set; }
+        public virtual WorkPlace WorkPlace { get; set; }
     }
 }

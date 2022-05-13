@@ -10,7 +10,8 @@ namespace Business.Abstract
 {
     public interface ISalesCategoryService
     {
-        Task<IDataResult<SalesCategory>> GetSalesCategory(string salesCategoryName);
-     
+        Task<SalesCategory> GetSalesCategory(string salesCategoryName);
+        Task<SalesCategory> GetSalesCategoryById(int salesCategoryId);
+        Task<List<SalesCategory>> GetAllSalesCategories();
     }
 }

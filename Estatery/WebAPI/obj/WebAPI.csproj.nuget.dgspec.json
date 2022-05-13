@@ -202,6 +202,9 @@
               "D:\\github\\Estatery\\Estatery\\Core\\Core.csproj": {
                 "projectPath": "D:\\github\\Estatery\\Estatery\\Core\\Core.csproj"
               },
+              "D:\\github\\Estatery\\Estatery\\Dtos\\Dtos.csproj": {
+                "projectPath": "D:\\github\\Estatery\\Estatery\\Dtos\\Dtos.csproj"
+              },
               "D:\\github\\Estatery\\Estatery\\Entities\\Entities.csproj": {
                 "projectPath": "D:\\github\\Estatery\\Estatery\\Entities\\Entities.csproj"
               }
@@ -219,6 +222,10 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[5.0.15, )"
             },
@@ -420,6 +427,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[7.2.0, )"

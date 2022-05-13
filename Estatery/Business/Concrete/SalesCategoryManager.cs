@@ -18,14 +18,27 @@ namespace Business.Concrete
         {
             _salesCategoryDal = salesCategoryDal;
         }
-        public async Task<IDataResult<SalesCategory>> GetSalesCategory(string salesCategoryName)
+
+        public async Task<List<SalesCategory>> GetAllSalesCategories()
+        {
+            var salescategories = await _salesCategoryDal.GetAllAsync();
+            return salescategories;
+        }
+
+        public async Task<SalesCategory> GetSalesCategory(string salesCategoryName)
         {
             SalesCategory salesCategory = await _salesCategoryDal.GetAsync(s => s.Name == salesCategoryName);
             if(salesCategory != null)
             {
-                return new SuccessDataResult<SalesCategory>(salesCategory);
+                return salesCategory;
             }
-            return new ErrorDataResult<SalesCategory>(BusinessMessages.SalesCategoryNotFound);
+            return null;
+        }
+
+        public async Task<SalesCategory> GetSalesCategoryById(int salesCategoryId)
+        {
+            var salesCategory = await _salesCategoryDal.GetAsync(s => s.Id == salesCategoryId);
+            return salesCategory;
         }
     }
 }

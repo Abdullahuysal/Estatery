@@ -23,9 +23,7 @@ namespace DataAccess.Concrete.EntityFramework.Mappers
                         .IsRequired()
                         .HasMaxLength(50);
             builder.Property(w => w.Price)
-                        .IsRequired();
-            builder.Property(w => w.SquareMeter)
-                        .IsRequired();           
+                        .IsRequired();          
         }
     }
 }

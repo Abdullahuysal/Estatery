@@ -10,6 +10,7 @@ namespace DataAccess.Abstract
 {
     public interface IHouseDal:IEntityRepository<House>
     {
-
+        Task<bool> IsExist(int id);
+        Task<House> GetHouseById(int id);
     }
 }

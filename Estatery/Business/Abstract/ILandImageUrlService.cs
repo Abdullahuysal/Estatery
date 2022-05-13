@@ -11,5 +11,6 @@ namespace Business.Abstract
     public interface ILandImageUrlService
     {
         Task<IResult> AddLandImageUrl(LandImageUrl landImageUrl);
+        Task<List<LandImageUrl>> GetLandImageUrlById(int id);
     }
 }

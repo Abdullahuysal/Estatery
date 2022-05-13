@@ -1,9 +1,11 @@
-﻿using Business.Abstract;
+﻿using AutoMapper;
+using Business.Abstract;
 using Business.Constants;
 using Business.Converter;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Dtos.Requests;
+using Dtos.Responses;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,8 @@ namespace Business.Concrete
         private ISalesCategoryService _salesCategoryService;
         private ISalesTypeService _salesTypeService;
         private ILandImageUrlService _landImageUrlService;
-        public LandManager(ILandDal landDal,ILandConverter landConverter, ILocationService locationService, ISalesCategoryService salesCategoryService, ISalesTypeService salesTypeService,ILandImageUrlService landImageUrlService)
+        private IMapper _mapper;
+        public LandManager(ILandDal landDal,ILandConverter landConverter, ILocationService locationService, ISalesCategoryService salesCategoryService, ISalesTypeService salesTypeService,ILandImageUrlService landImageUrlService,IMapper mapper)
         {
             _landDal = landDal;
             _landConverter = landConverter;
@@ -29,6 +32,7 @@ namespace Business.Concrete
             _salesCategoryService = salesCategoryService;
             _salesTypeService = salesTypeService;
             _landImageUrlService = landImageUrlService;
+            _mapper = mapper;
         }
 
         public async Task<IResult> AddLand(LandRequest landRequest)
@@ -54,36 +58,56 @@ namespace Business.Concrete
             var location = await _locationService.GetLocation(land.Location.CityName, land.Location.DistrictName);
             var salesCategory = await _salesCategoryService.GetSalesCategory(land.SalesCategory.Name);
             var salesType = await _salesTypeService.GetSalesType(land.SalesType.Name);
-            land.LocationId = location.Data.Id;
-            land.SalesCategoryId = salesCategory.Data.Id;
-            land.SalesTypeId = salesType.Data.Id;
+            land.LocationId = location.Id;
+            land.SalesCategoryId = salesCategory.Id;
+            land.SalesTypeId = salesType.Id;
             return land;
         }
 
         public async Task<List<Land>> GetAllLands()
         {
             List<Land> lands = await _landDal.GetAllAsync();
+            lands = await GetLanddetails(lands);
             return lands;
         }
-
-        public async Task<IDataResult<Land>> GetLandById(int Id)
+        private async Task<List<Land>> GetLanddetails(List<Land> lands)
         {
-            var land = await _landDal.GetAsync(l => l.Id == Id);
-            if (land != null)
+            List<Land> landresponse = new List<Land>();
+            foreach (var land in lands)
             {
-                return new SuccessDataResult<Land>(land);
+                landresponse.Add(await _landConverter.landtoLandDetail(land));
             }
-            return new ErrorDataResult<Land>(BusinessMessages.GetFailed);
+            return landresponse;
         }
 
-        public Task<IResult> UpdateLand(LandRequest landRequest)
+        public async Task<LandResponse> GetLandById(int Id)
         {
-            throw new NotImplementedException();
+            Land land = await _landDal.GetLandById(Id);
+            var landresponse = _mapper.Map<LandResponse>(land);
+            return landresponse;
+        }
+
+        public async Task<IResult> UpdateLand(LandUpdateRequest landUpdateRequest)
+        {
+            var land = _mapper.Map<Land>(landUpdateRequest);
+            var result = await _landDal.UpdateAsync(land);
+            if(result != null)
+            {
+                // Todo:2 land image url service update'i yazılacak 
+                
+                return new SuccessResult();
+            }
+            return new ErrorResult(BusinessMessages.UpdateFailed);
         }
 
         public Task<IResult> DeleteLand(LandRequest landRequest)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<bool> IsExist(int id)
+        {
+            return await _landDal.IsExist(id);
         }
     }
     }

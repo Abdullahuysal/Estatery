@@ -22,9 +22,13 @@
   color: whitesmoke;
 }
 .nav-options ul li {
-  margin: 25px 80px 50px 50px;
+  margin: 20px 40px 50px 50px;
   display: inline-block;
   cursor: pointer;
+}
+.nav-options ul li a{
+    color:whitesmoke;
+    text-decoration:none;
 }
 li{
     display:block;
@@ -39,8 +43,9 @@ li{
     margin-top:80px;
     display: inline-block;
 }
+.nav-link {
+    text-decoration: none;
+    margin-left:10px;
 
-
-    .card{
-
-    }
+    display: block;
+}

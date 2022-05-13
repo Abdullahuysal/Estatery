@@ -1,0 +1,15 @@
+﻿@model Entities.Concrete.WorkPlace
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@Html.Raw(Model.WorkPlaceImageUrls.First().Name.ToString())" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title"></h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">İlan Sahibi @Model.Advertiser.ToUpper()</li>
+        <li class="list-group-item">Lokasyon: @Model.Location.CityName / @Model.Location.DistrictName </li>
+        <li class="list-group-item">Satış Kategorisi: @Model.SalesCategory.Name</li>
+        <li class="list-group-item">Satış Tipi @Model.SalesType.Name</li>
+        <li class="list-group-item">Toplam : @Model.Price m2 </li>
+    </ul>
+      @Html.ActionLink("Edit", "Update", new { id = Model.Id }) 
+</div>

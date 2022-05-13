@@ -94,11 +94,11 @@ namespace DataAccess.Migrations
                     NumberOfRooms = table.Column<int>(type: "int", nullable: false),
                     NumberOfBath = table.Column<int>(type: "int", nullable: false),
                     SquareMeter = table.Column<int>(type: "int", nullable: false),
-                    SalesCategoryId = table.Column<int>(type: "int", nullable: true),
-                    LocationId = table.Column<int>(type: "int", nullable: true),
-                    SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 508, DateTimeKind.Local).AddTicks(8153)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 513, DateTimeKind.Local).AddTicks(2293)),
+                    SalesCategoryId = table.Column<int>(type: "int", nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: false),
+                    SalesTypeId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 13, 0, 39, 38, 985, DateTimeKind.Local).AddTicks(5887)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 13, 0, 39, 38, 987, DateTimeKind.Local).AddTicks(9)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -128,13 +128,12 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Price = table.Column<int>(type: "int", nullable: false),
                     SquareMeter = table.Column<int>(type: "int", nullable: false),
-                    SalesCategoryId = table.Column<int>(type: "int", nullable: true),
-                    LocationId = table.Column<int>(type: "int", nullable: true),
-                    SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(7327)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(8697)),
+                    SalesCategoryId = table.Column<int>(type: "int", nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: false),
+                    SalesTypeId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 13, 0, 39, 38, 987, DateTimeKind.Local).AddTicks(9992)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 13, 0, 39, 38, 988, DateTimeKind.Local).AddTicks(566)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -165,12 +164,11 @@ namespace DataAccess.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    SquareMeter = table.Column<int>(type: "int", nullable: false),
-                    SalesCategoryId = table.Column<int>(type: "int", nullable: true),
-                    LocationId = table.Column<int>(type: "int", nullable: true),
-                    SalesTypeId = table.Column<int>(type: "int", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(8627)),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(9700)),
+                    SalesCategoryId = table.Column<int>(type: "int", nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: false),
+                    SalesTypeId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 13, 0, 39, 38, 989, DateTimeKind.Local).AddTicks(127)),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2022, 5, 13, 0, 39, 38, 989, DateTimeKind.Local).AddTicks(722)),
                     Advertiser = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -220,7 +218,7 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LandId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -240,7 +238,7 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WorkPlaceId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

@@ -37,9 +37,9 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 508, DateTimeKind.Local).AddTicks(8153));
+                        .HasDefaultValue(new DateTime(2022, 5, 13, 0, 39, 38, 985, DateTimeKind.Local).AddTicks(5887));
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<int>("NumberOfBath")
@@ -48,10 +48,10 @@ namespace DataAccess.Migrations
                     b.Property<int>("NumberOfRooms")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SalesCategoryId")
+                    b.Property<int>("SalesCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SalesTypeId")
+                    b.Property<int>("SalesTypeId")
                         .HasColumnType("int");
 
                     b.Property<int>("SquareMeter")
@@ -60,7 +60,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 513, DateTimeKind.Local).AddTicks(2293));
+                        .HasDefaultValue(new DateTime(2022, 5, 13, 0, 39, 38, 987, DateTimeKind.Local).AddTicks(9));
 
                     b.HasKey("Id");
 
@@ -108,18 +108,15 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(7327));
+                        .HasDefaultValue(new DateTime(2022, 5, 13, 0, 39, 38, 987, DateTimeKind.Local).AddTicks(9992));
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Price")
+                    b.Property<int>("SalesCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SalesCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SalesTypeId")
+                    b.Property<int>("SalesTypeId")
                         .HasColumnType("int");
 
                     b.Property<int>("SquareMeter")
@@ -128,7 +125,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 515, DateTimeKind.Local).AddTicks(8697));
+                        .HasDefaultValue(new DateTime(2022, 5, 13, 0, 39, 38, 988, DateTimeKind.Local).AddTicks(566));
 
                     b.HasKey("Id");
 
@@ -151,7 +148,7 @@ namespace DataAccess.Migrations
                     b.Property<int?>("LandId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -455,27 +452,24 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(8627));
+                        .HasDefaultValue(new DateTime(2022, 5, 13, 0, 39, 38, 989, DateTimeKind.Local).AddTicks(127));
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SalesCategoryId")
+                    b.Property<int>("SalesCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SalesTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SquareMeter")
+                    b.Property<int>("SalesTypeId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 5, 5, 17, 33, 11, 517, DateTimeKind.Local).AddTicks(9700));
+                        .HasDefaultValue(new DateTime(2022, 5, 13, 0, 39, 38, 989, DateTimeKind.Local).AddTicks(722));
 
                     b.HasKey("Id");
 
@@ -495,7 +489,7 @@ namespace DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Url")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("WorkPlaceId")
@@ -513,17 +507,20 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.Concrete.Location", "Location")
                         .WithMany("Houses")
                         .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Entities.Concrete.SalesCategory", "SalesCategory")
                         .WithMany("Houses")
                         .HasForeignKey("SalesCategoryId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Entities.Concrete.SalesType", "SalesType")
                         .WithMany("Houses")
                         .HasForeignKey("SalesTypeId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("Location");
 
@@ -534,9 +531,11 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.Concrete.HouseImageUrl", b =>
                 {
-                    b.HasOne("Entities.Concrete.House", null)
+                    b.HasOne("Entities.Concrete.House", "House")
                         .WithMany("HouseImageUrls")
                         .HasForeignKey("HouseId");
+
+                    b.Navigation("House");
                 });
 
             modelBuilder.Entity("Entities.Concrete.Land", b =>
@@ -544,17 +543,20 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.Concrete.Location", "Location")
                         .WithMany("Lands")
                         .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Entities.Concrete.SalesCategory", "SalesCategory")
                         .WithMany("Lands")
                         .HasForeignKey("SalesCategoryId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Entities.Concrete.SalesType", "SalesType")
                         .WithMany("Lands")
                         .HasForeignKey("SalesTypeId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("Location");
 
@@ -565,9 +567,11 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.Concrete.LandImageUrl", b =>
                 {
-                    b.HasOne("Entities.Concrete.Land", null)
+                    b.HasOne("Entities.Concrete.Land", "Land")
                         .WithMany("LandImageUrls")
                         .HasForeignKey("LandId");
+
+                    b.Navigation("Land");
                 });
 
             modelBuilder.Entity("Entities.Concrete.User", b =>
@@ -584,17 +588,20 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.Concrete.Location", "Location")
                         .WithMany("WorkPlaces")
                         .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Entities.Concrete.SalesCategory", "SalesCategory")
                         .WithMany("WorkPlaces")
                         .HasForeignKey("SalesCategoryId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Entities.Concrete.SalesType", "SalesType")
                         .WithMany("WorkPlaces")
                         .HasForeignKey("SalesTypeId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("Location");
 
@@ -605,9 +612,11 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.Concrete.WorkPlaceImageUrl", b =>
                 {
-                    b.HasOne("Entities.Concrete.WorkPlace", null)
+                    b.HasOne("Entities.Concrete.WorkPlace", "WorkPlace")
                         .WithMany("WorkPlaceImageUrls")
                         .HasForeignKey("WorkPlaceId");
+
+                    b.Navigation("WorkPlace");
                 });
 
             modelBuilder.Entity("Entities.Concrete.House", b =>

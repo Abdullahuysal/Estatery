@@ -13,6 +13,7 @@
         <form asp-action="SignupPage" method="post">
 
             <h1>Real Estatery Kayıt Ol</h1>
+            <div class="validation" asp-validation-summary="All"></div>
             <input asp-for="FirstName" class="text_box" placeholder="Ad" type="text" />
             <input asp-for="SecondName" class="text_box" placeholder="Soy Ad" type="text" />
             <input asp-for="Email" class="text_box" placeholder="E-mail Adres(example@gmail.com)" type="email" />

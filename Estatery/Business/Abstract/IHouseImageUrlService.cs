@@ -12,5 +12,7 @@ namespace Business.Abstract
     public interface IHouseImageUrlService
     {
         Task<IResult> AddHouseImageUrl(HouseImageUrl houseImageUrl);
+        Task<List<HouseImageUrl>> GetHouseImageUrlById(int HouseImageUrlId);
+        Task<IResult> UpdateHouseImageUrl(int HouseImageUrlId, HouseImageUrl houseImageUrl);
     }
 }

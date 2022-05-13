@@ -25,8 +25,10 @@ D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\DataAccess.dll
 D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\ref\DataAccess.dll
 D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\DataAccess.pdb
 D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\Core.dll
+D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\Dtos.dll
 D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\Entities.dll
 D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\Core.pdb
+D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\Dtos.pdb
 D:\github\Estatery\Estatery\DataAccess\bin\Debug\net5.0\Entities.pdb
 D:\github\Estatery\Estatery\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
 D:\github\Estatery\Estatery\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig

@@ -22,5 +22,11 @@ namespace Business.Concrete
             await _workPlaceImageUrlDal.AddAsync(workPlaceImageUrl);
             return new SuccessResult();
         }
+
+        public async Task<List<WorkPlaceImageUrl>> GetWorkPlaceImageUrlById(int id)
+        {
+            var workplaceimageurls = await _workPlaceImageUrlDal.GetAllAsync(i => i.Id == id);
+            return workplaceimageurls;
+        }
     }
 }

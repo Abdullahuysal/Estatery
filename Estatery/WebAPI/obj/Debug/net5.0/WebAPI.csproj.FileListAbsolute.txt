@@ -138,3 +138,9 @@ D:\github\Estatery\Estatery\WebAPI\obj\Debug\net5.0\WebAPI.dll
 D:\github\Estatery\Estatery\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 D:\github\Estatery\Estatery\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 D:\github\Estatery\Estatery\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

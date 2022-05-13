@@ -22,6 +22,12 @@ namespace Business.Concrete
             await _landImageUrlDal.AddAsync(landImageUrl);
             return new SuccessResult();
         }
-       
+
+        public async Task<List<LandImageUrl>> GetLandImageUrlById(int id)
+        {
+            var landimageurls = await _landImageUrlDal.GetAllAsync(i => i.Id == id);
+            return landimageurls;
+        }
+
     }
 }

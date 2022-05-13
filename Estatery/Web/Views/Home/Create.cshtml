@@ -3,42 +3,62 @@
 @{
     ViewData["Title"] = "Create";
 }
+<link href="~/css/Create.css" rel="stylesheet" />
 
-<h1>Create</h1>
-
-<h4>HouseRequest</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 form" >
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Advertiser" class="control-label"></label>
+                <label asp-for="Advertiser" class="control-label">İlanı oluşturan Ad Soyad</label>
                 <input asp-for="Advertiser" class="form-control" />
                 <span asp-validation-for="Advertiser" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ConstructionYear" class="control-label"></label>
+                <label asp-for="ConstructionYear" class="control-label">İnşa Yılı</label>
                 <input asp-for="ConstructionYear" class="form-control" />
                 <span asp-validation-for="ConstructionYear" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NumberOfRooms" class="control-label"></label>
+                <label asp-for="NumberOfRooms" class="control-label">Oda Sayısı</label>
                 <input asp-for="NumberOfRooms" class="form-control" />
                 <span asp-validation-for="NumberOfRooms" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NumberOfBath" class="control-label"></label>
+                <label asp-for="NumberOfBath" class="control-label">Banyo Sayısı</label>
                 <input asp-for="NumberOfBath" class="form-control" />
                 <span asp-validation-for="NumberOfBath" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SquareMeter" class="control-label"></label>
+                <label asp-for="SquareMeter" class="control-label">Toplam Metrekare</label>
                 <input asp-for="SquareMeter" class="form-control" />
                 <span asp-validation-for="SquareMeter" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Location" class="control-label">Lokasyon</label>
+                <select asp-for="Location.CityName" class="form-control" asp-items="ViewBag.Locations">
+                </select>
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesCategory.Name" class="control-label">Satış Kategorisi</label>
+                <select asp-for="SalesCategory.Name" class="form-control" asp-items="ViewBag.salescategoryItems">
+                </select>
+                <span asp-validation-for="SalesCategory.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesType.Name" class="control-label">Satış Tipi</label>
+                <select asp-for="SalesType.Name" class="form-control" asp-items="ViewBag.salestypeItems">
+                </select>
+                <span asp-validation-for="SalesType.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrls.Name" class="control-label">Image Url'i' </label>
+                <input asp-for="ImageUrls.Name" class="form-control" />
+                <span asp-validation-for="ImageUrls.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-success" />
             </div>
         </form>
     </div>

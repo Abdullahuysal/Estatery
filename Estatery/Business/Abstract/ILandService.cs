@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Dtos.Requests;
+using Dtos.Responses;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace Business.Abstract
         Task<List<Land>> GetAllLands();
         Task<Land> FindLandRelatedInformation(Land land);
         Task<IResult> AddLand(LandRequest landRequest);
-        Task<IResult> UpdateLand(LandRequest landRequest);
+        Task<IResult> UpdateLand(LandUpdateRequest landUpdateRequest);
         Task<IResult> DeleteLand(LandRequest landRequest);
-        Task<IDataResult<Land>> GetLandById(int Id);
+        Task<LandResponse> GetLandById(int Id);
+        Task<bool> IsExist(int id);
     }
 }

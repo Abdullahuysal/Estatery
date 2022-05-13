@@ -9,7 +9,7 @@
     background: #DAC5B0;
     padding: 10px;
     max-width: 500px;
-    height: 250px;
+    height: 410px;
     margin: 300px auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px #13232f;
@@ -55,6 +55,6 @@ h1 {
         background: #ffffff;
         color: #54482D;
     }
-.validation{
-    color:whitesmoke;
+.validation {
+    color: #431901;
 }

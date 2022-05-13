@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Wl7rmAnLg9UmtYKeQCxiZKnCdZYVnO5VlS+gfpunKG1/vTbqhyUBhuPKh8vzSQhQXORbk2Jtyw33VQLhVewVCw==",
+  "dgSpecHash": "R9LLBNdrESUFD4/fadcEW8wpVCpFn0gDFzGifTsBAQoezXRt+9vn7NBAh7dc5ylSf6ciLc78gr+QvZVI5KOx4Q==",
   "success": true,
   "projectFilePath": "D:\\github\\Estatery\\Estatery\\Business\\Business.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,7 @@
     "C:\\Users\\uysal\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.2.0\\autofac.extensions.dependencyinjection.7.2.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
-    "C:\\Users\\uysal\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
@@ -16,6 +16,7 @@
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.15\\microsoft.entityframeworkcore.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.15\\microsoft.entityframeworkcore.abstractions.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.15\\microsoft.entityframeworkcore.analyzers.5.0.15.nupkg.sha512",
+    "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\5.0.15\\microsoft.entityframeworkcore.proxies.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.15\\microsoft.entityframeworkcore.relational.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.15\\microsoft.entityframeworkcore.sqlserver.5.0.15.nupkg.sha512",
     "C:\\Users\\uysal\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",

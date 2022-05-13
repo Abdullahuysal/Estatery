@@ -24,5 +24,20 @@ namespace Business.Concrete
             await _houseImageUrlDal.AddAsync(houseImageUrl);
             return new SuccessResult();
         }
+
+        public async Task<List<HouseImageUrl>> GetHouseImageUrlById(int HouseImageUrlId)
+        {
+            var houseimageurls = await _houseImageUrlDal.GetAllAsync(i => i.Id == HouseImageUrlId);
+            return houseimageurls;
+        }
+
+        public async Task<IResult> UpdateHouseImageUrl(int HouseImageUrlId, HouseImageUrl houseImageUrl)
+        {
+            var houseimageurl = await GetHouseImageUrlById(HouseImageUrlId);
+            houseImageUrl.Id = HouseImageUrlId;
+            houseImageUrl.Name = houseImageUrl.Name;
+            await _houseImageUrlDal.UpdateAsync(houseImageUrl);
+            return new SuccessResult();
+        }
     }
 }

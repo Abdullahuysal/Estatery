@@ -10,6 +10,8 @@ namespace Business.Abstract
 {
     public interface ISalesTypeService
     {
-        Task<IDataResult<SalesType>> GetSalesType(string salesTypeName);
+        Task<SalesType> GetSalesType(string salesTypeName);
+        Task<SalesType> GetSalesTypeById(int salesTypeId);
+        Task<List<SalesType>> GetAllSalesTypes();
     }
 }

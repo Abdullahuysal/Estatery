@@ -13,10 +13,11 @@ namespace Business.Abstract
     public interface IHouseService
     {
         Task<List<House>> GetAllHouses();
+        Task<bool> IsExist(int id);
         Task<House> FindHomeRelatedInformation(House house);
         Task<IResult> AddHouse(HouseRequest HouseRequest);
-        Task<IResult> UpdateHouse(HouseRequest houseRequest);
+        Task<IResult> UpdateHouse(HouseUpdateRequest houseUpdateRequest);
         Task<IResult> DeleteHouse(HouseRequest houseRequest);
-
+        Task<HouseResponse> GetHouseById(int id);
     }
 }

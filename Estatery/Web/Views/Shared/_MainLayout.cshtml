@@ -19,9 +19,22 @@
             </div>
             <div class="nav-options">
                 <ul>
-                    <li>Ev</li>
-                    <li>Arazi</li>
-                    <li>İş Yeri</li>
+                    <li><a asp-action="HomePage" asp-controller="Home">Ev ilanları</a></li>
+                    <li><a asp-action="LandPage" asp-controller="Land">Arazi ilanları</a></li>
+                    <li><a asp-action="WorkPlacePage" asp-controller="WorkPlace">İş Yeri ilanları</a></li>
+                    <li><a asp-action="Create" asp-controller="Home">Ev ilanı oluştur</a></li>
+                    <li><a asp-action="Create" asp-controller="Land">Arazi ilanı oluştur</a></li>
+                    <li><a asp-action="Create" asp-controller="WorkPlace">İş yeri ilanı oluştur</a></li>
+                    <li class="nav-item">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="nav-link" asp-action="Logout" asp-controller="User">@User.Identity.Name (Çıkış Yap)</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link" asp-action="LoginPage" asp-controller="User">Giriş Yap</a>
+                        }
+                    </li>
                 </ul>
             </div>
         </nav>

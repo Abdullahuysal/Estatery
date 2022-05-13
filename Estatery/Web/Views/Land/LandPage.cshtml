@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "LandPage";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="mycard">
+            <partial name="_landCard" model="@item" />
+        </div>
+    }
+</div>

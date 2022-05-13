@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using AutoMapper;
 using Business.Converter;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -12,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Constants;
 
 namespace Business.Concrete
 {
@@ -23,8 +25,8 @@ namespace Business.Concrete
         private ISalesCategoryService _salesCategoryService;
         private ISalesTypeService _salesTypeService;
         private IHouseImageUrlService _houseImageUrlService;
-
-        public HouseManager(IHouseDal houseDal,IHouseConverter houseConverter,ILocationService locationService,ISalesCategoryService salesCategoryService,ISalesTypeService salesTypeService, IHouseImageUrlService houseImageUrlService)
+        private IMapper _mapper;
+        public HouseManager(IHouseDal houseDal,IHouseConverter houseConverter,ILocationService locationService,ISalesCategoryService salesCategoryService,ISalesTypeService salesTypeService, IHouseImageUrlService houseImageUrlService,IMapper mapper)
         {
             _houseDal = houseDal;
             _houseConverter = houseConverter;
@@ -32,6 +34,7 @@ namespace Business.Concrete
             _salesCategoryService = salesCategoryService;
             _salesTypeService = salesTypeService;
             _houseImageUrlService = houseImageUrlService;
+            _mapper = mapper;
         }
 
         [ValidationAspect(typeof(HouseValidator))]
@@ -41,7 +44,6 @@ namespace Business.Concrete
             house =await FindHomeRelatedInformation(house);
             await _houseDal.AddAsync(house);
             await AddImageUrlToTable(house.HouseImageUrls, house);
-
             return new SuccessResult();
         }
 
@@ -57,10 +59,9 @@ namespace Business.Concrete
             var location = await _locationService.GetLocation(house.Location.CityName, house.Location.DistrictName);
             var salesCategory = await _salesCategoryService.GetSalesCategory(house.SalesCategory.Name);
             var salesType = await _salesTypeService.GetSalesType(house.SalesType.Name);
-           
-            house.LocationId = location.Data.Id;
-            house.SalesCategoryId = salesCategory.Data.Id;
-            house.SalesTypeId = salesType.Data.Id;
+            house.LocationId = location.Id;
+            house.SalesCategoryId = salesCategory.Id;
+            house.SalesTypeId = salesType.Id;
             return house;
         }
         private async Task AddImageUrlToTable(ICollection<HouseImageUrl> imageUrls,House house)
@@ -74,12 +75,42 @@ namespace Business.Concrete
         public async Task<List<House>>  GetAllHouses()
         {
             List<House> houses = await _houseDal.GetAllAsync();
-            return houses; 
+            houses =await GetHousedetails(houses);
+            return houses;
+           
+        }
+        private async Task<List<House>> GetHousedetails(List<House> houses)
+        {
+            List<House> houseresponse = new List<House>();
+            foreach (var house in houses)
+            {  
+               houseresponse.Add(await _houseConverter.housetohouseDetail(house));
+            }
+            return houseresponse;
         }
 
-        public Task<IResult> UpdateHouse(HouseRequest houseRequest)
+        public async Task<IResult> UpdateHouse(HouseUpdateRequest houseUpdateRequest)
         {
-            throw new NotImplementedException();
+            var house = await _houseConverter.HouseUpdateRequestTohouse(houseUpdateRequest);
+            var result = await _houseDal.UpdateAsync(house);
+            if (result != null)
+            {
+                await _houseImageUrlService.UpdateHouseImageUrl(house.Id, house.HouseImageUrls.First());
+                return new SuccessResult();
+            }
+            return new ErrorResult(BusinessMessages.UpdateFailed);
+        }
+
+        public async Task<bool> IsExist(int id)
+        {
+            return await _houseDal.IsExist(id);
+        }
+
+        public async Task<HouseResponse> GetHouseById(int id)
+        {
+            House house = await _houseDal.GetHouseById(id);
+            var houseresponse = _mapper.Map<HouseResponse>(house);
+            return houseresponse;
         }
     }
 }

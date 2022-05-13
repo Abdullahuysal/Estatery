@@ -1,0 +1,17 @@
+﻿
+@model Entities.Concrete.Land
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@Html.Raw(Model.LandImageUrls.First().Name.ToString())" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title"></h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">İlan Sahibi: @Model.Advertiser</li>
+        <li class="list-group-item">Lokasyon @Model.Location.CityName / @Model.Location.DistrictName </li>
+        <li class="list-group-item">Toplam : @Model.SquareMeter m2</li>
+        <li class="list-group-item">@Model.SalesCategory.Name </li>
+        <li class="list-group-item"></li>
+    </ul>
+    @Html.ActionLink("Edit", "Update", new { id = Model.Id })
+</div>
