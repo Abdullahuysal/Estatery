@@ -72,13 +72,14 @@ namespace Business.Concrete
                 await _houseImageUrlService.AddHouseImageUrl(imageUrl);
             }
         }
-        public async Task<List<House>>  GetAllHouses()
+        public async Task<List<House>> GetAllHouses()
         {
             List<House> houses = await _houseDal.GetAllAsync();
-            houses =await GetHousedetails(houses);
+            houses = await GetHousedetails(houses);
             return houses;
-           
+
         }
+
         private async Task<List<House>> GetHousedetails(List<House> houses)
         {
             List<House> houseresponse = new List<House>();

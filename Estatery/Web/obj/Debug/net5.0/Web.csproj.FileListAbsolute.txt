@@ -174,3 +174,4 @@ D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Home\Update.cshtml.
 D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Land\LandPage.cshtml.g.cs
 D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Shared\_WorkPlaceCard.cshtml.g.cs
 D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\WorkPlace\WorkPlacePage.cshtml.g.cs
+D:\github\Estatery\Estatery\Web\obj\Debug\net5.0\Razor\Views\Land\Update.cshtml.g.cs

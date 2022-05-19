@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
         {
             _houseService = houseService;
         }
-        [HttpGet("getallhouses")]
+        [HttpGet("getallhouse")]
         public IActionResult GetAllHouses()
         {
             var result = _houseService.GetAllHouses();

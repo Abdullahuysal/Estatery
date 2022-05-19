@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.Mapper;
 
 namespace WebAPI
 {
@@ -37,7 +38,12 @@ namespace WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
             });
-            services.AddCors();
+            services.AddAutoMapper(typeof(MapProfile));
+            services.AddCors(opt => opt.AddPolicy("Allow",builder => {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +57,7 @@ namespace WebAPI
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors("Allow");
             app.UseRouting();
 
             app.UseAuthorization();
