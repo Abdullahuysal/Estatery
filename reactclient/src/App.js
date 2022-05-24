@@ -1,18 +1,17 @@
+import './App.css';
+import Login from "./pages/User/Login";
+import House from "./pages/RealEstate/HouseList"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
-import LoginPage from "./Pages/Login-Signup/LoginPage";
-import SignupPage from "./Pages/Login-Signup/SignupPage";
-
-
 function App() {
   return (
     <div className="App">
-     <Routes>
-       <Route>
-       <Route path='/' element={<LoginPage />} />
-       <Route path='/Loginpage' element={<LoginPage />} />
-       <Route path='/Signuppage' element={<SignupPage/>} />
-       </Route>
-     </Routes>
+      <Routes>
+        <Route>
+          <Route path='/' element={<House/>}/>
+          <Route path='/Login' element={<Login/>}/>
+        </Route>
+      </Routes>
     </div>
   );
 }

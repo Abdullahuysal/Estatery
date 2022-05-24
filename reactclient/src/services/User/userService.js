@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const url="https://localhost:44321/api/User";
 export default class UserService{
     
@@ -9,6 +8,4 @@ export default class UserService{
     signup(payload){
         return axios.post(url+"/signup",payload);
     }
-
-
 }
