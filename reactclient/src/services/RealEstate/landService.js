@@ -6,7 +6,7 @@ export default class LandService{
         return axios.get(url+"/getallland");
     }
     GetById(payload){
-        return axios.get(url+"/getbyId",payload);
+        return axios.get(`https://localhost:44321/api/Land/getlandbyid?id=${payload}`);
     }
     AddLand(payload){
         return axios.post(url+"/addland",payload);

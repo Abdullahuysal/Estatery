@@ -144,3 +144,6 @@ D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Depende
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\MailKit.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\MimeKit.dll
+D:\github\Estatery\Estatery\WebAPI\bin\Debug\net5.0\BouncyCastle.Crypto.dll

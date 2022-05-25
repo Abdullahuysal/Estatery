@@ -18,6 +18,7 @@ namespace Business.Abstract
         Task<IResult> UpdateLand(LandUpdateRequest landUpdateRequest);
         Task<IResult> DeleteLand(LandRequest landRequest);
         Task<LandResponse> GetLandById(int Id);
+        Task<Land> GetlandDetailById(int Id);
         Task<bool> IsExist(int id);
     }
 }

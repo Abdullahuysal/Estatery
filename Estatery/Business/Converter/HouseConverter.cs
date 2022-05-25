@@ -88,7 +88,7 @@ namespace Business.Converter
             var housesalestype = await _salesTypeService.GetSalesType(houseUpdateRequest.SalesType.Name);
             houseimageurl.Name = houseUpdateRequest.HouseimageUrl;
             houseimageUrls.Add(houseimageurl);
-            // TODO:HOUSE SALES TYPE YOK HATA VAR HOUSESALES CATEORY İD =0 GELİYOR DÜZELT
+          
             house.HouseImageUrls = houseimageUrls;
             house.Location = houselocation;
             house.SalesCategory = housesalescategory;

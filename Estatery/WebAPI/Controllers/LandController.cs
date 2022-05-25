@@ -37,7 +37,7 @@ namespace WebAPI.Controllers
         [HttpGet("getlandbyid")]
         public async Task<IActionResult> GetLandById(int id)
         {
-            var result = await _landService.GetLandById(id);
+            var result = await _landService.GetlandDetailById(id);
             if (result != null)
             {
                 return Ok(result);

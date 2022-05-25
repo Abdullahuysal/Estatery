@@ -83,7 +83,8 @@ namespace Business.Concrete
         public async Task<LandResponse> GetLandById(int Id)
         {
             Land land = await _landDal.GetLandById(Id);
-            var landresponse = _mapper.Map<LandResponse>(land);
+            var landdetail = await _landConverter.landtoLandDetail(land);
+            var landresponse = _mapper.Map<LandResponse>(landdetail);
             return landresponse;
         }
 
@@ -108,6 +109,13 @@ namespace Business.Concrete
         public async Task<bool> IsExist(int id)
         {
             return await _landDal.IsExist(id);
+        }
+
+        public async Task<Land> GetlandDetailById(int Id)
+        {
+            Land land = await _landDal.GetLandById(Id);
+            var landdetail = await _landConverter.landtoLandDetail(land);
+            return landdetail;
         }
     }
     }

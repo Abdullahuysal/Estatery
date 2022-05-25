@@ -22,7 +22,7 @@ export default function Addhouse() {
         "name": salesType,
       },
       "salesCategory": {
-        name: salesCategory,
+        "name": salesCategory,
       },
       "location": {
         "cityName": cityname,
