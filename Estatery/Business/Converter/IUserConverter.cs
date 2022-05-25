@@ -11,5 +11,6 @@ namespace Business.Converter
     public interface IUserConverter
     {
         User UserRequestToUser(UserSignupRequest userSignupRequest);
+        User UserupdateRequestToUser(UserUpdateRequest userUpdateRequest);
     }
 }

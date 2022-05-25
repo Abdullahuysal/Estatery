@@ -13,5 +13,8 @@ namespace Business.Abstract
     {
         Task<IDataResult<User>> ValidateUser(UserLoginRequest userLoginRequest);
         Task<IDataResult<User>> SignupUser(UserSignupRequest userSignupRequest);
+        Task<IDataResult<User>> GetUserById(int id);
+        Task<IResult>UpdateUser(UserUpdateRequest userUpdateRequest);
+        Task<string> GetUserEmail(string username);
     }
 }

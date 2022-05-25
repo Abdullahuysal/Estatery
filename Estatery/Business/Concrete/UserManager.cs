@@ -25,6 +25,27 @@ namespace Business.Concrete
             _userDal = userDal;
             _userConverter = userConverter;
         }
+
+        public async Task<IDataResult<User>> GetUserById(int id)
+        {
+            var user = await _userDal.GetUserById(id);
+            if (user != null)
+            {
+                return new SuccessDataResult<User>(user);
+            }
+            return new ErrorDataResult<User>(BusinessMessages.GetFailed);
+        }
+
+        public async Task<string> GetUserEmail(string username)
+        {
+            var useremail = await _userDal.getUserEmail(username);
+            if (useremail != null)
+            {
+                return useremail;
+            }
+            return null;
+        }
+
         [ValidationAspect(typeof(UserValidator))]
         public async Task<IDataResult<User>> SignupUser(UserSignupRequest userSignupRequest)
         {
@@ -36,6 +57,18 @@ namespace Business.Concrete
             await _userDal.AddAsync(newUser);
             return new SuccessDataResult<User>(newUser, BusinessMessages.AddSuccessfull);
         }
+
+        public async Task<IResult> UpdateUser(UserUpdateRequest userUpdateRequest)
+        {
+            var user = _userConverter.UserupdateRequestToUser(userUpdateRequest);
+            var result = await _userDal.UpdateAsync(user);
+            if(result != null)
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult(BusinessMessages.UpdateFailed);
+        }
+
         public async Task<IDataResult<User>> ValidateUser(UserLoginRequest userLoginRequest)
         {
            var user=await FindUserInfo(userLoginRequest.Email, userLoginRequest.Password);
@@ -45,6 +78,7 @@ namespace Business.Concrete
             }
             return new ErrorDataResult<User>(BusinessMessages.GetFailed);
         }
+        
         private async Task<User> FindUserInfo(string email,string password)
         {
             return await _userDal.GetAsync(u => u.Email == email && u.Password == password);

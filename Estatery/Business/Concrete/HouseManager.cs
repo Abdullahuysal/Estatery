@@ -107,11 +107,11 @@ namespace Business.Concrete
             return await _houseDal.IsExist(id);
         }
 
-        public async Task<HouseResponse> GetHouseById(int id)
+        public async Task<House> GetHouseById(int id)
         {
             House house = await _houseDal.GetHouseById(id);
-            var houseresponse = _mapper.Map<HouseResponse>(house);
-            return houseresponse;
+            house = await _houseConverter.housetohouseDetail(house);
+            return house;
         }
     }
 }

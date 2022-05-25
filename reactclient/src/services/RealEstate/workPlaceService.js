@@ -4,7 +4,7 @@ const url="https://localhost:44321/api/WorkPlace";
 export default class WorkPlaceService{
 
     GetAll(){
-        return axios.get(url+"/getallworkplace");
+        return axios.get(url+"/getallworkplaces");
     }
     GetById(payload){
         return axios.get(url+"/getbyId",payload);

@@ -8,4 +8,10 @@ export default class UserService{
     signup(payload){
         return axios.post(url+"/signup",payload);
     }
+    getuser(payload){
+        return axios.get(`https://localhost:44321/api/User/getuserInfo?id=${payload}`)
+    }
+    update(payload){
+        return axios.post(url+"/updateuser",payload);
+    }
 }

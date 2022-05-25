@@ -17,5 +17,17 @@ namespace DataAccess.Concrete.EntityFramework
            if (result == null)  return false;
            return true;
         }
+
+        public async Task<User> GetUserById(int id)
+        {
+            var user = await this.GetAsync(u => u.Id == id);
+            return user;
+        }
+
+        public async Task<string> getUserEmail(string username)
+        {
+            var user = await this.GetAsync(u => u.FirstName == username);
+            return user.Email;
+        }
     }
 }

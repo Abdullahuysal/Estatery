@@ -19,10 +19,50 @@ namespace WebAPI.Controllers
             _userService = userService;
         }
         [HttpPost("login")]
-        public IActionResult Login(UserLoginRequest userLoginRequest)
+        public async Task<IActionResult> Login(UserLoginRequest userLoginRequest)
         {
-            var result = _userService.ValidateUser(userLoginRequest);
+            var result = await _userService.ValidateUser(userLoginRequest);
             if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+        [HttpPost("signup")]
+        public async Task<IActionResult> Signup(UserSignupRequest userSignupRequest)
+        {
+            var result = await _userService.SignupUser(userSignupRequest);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+        [HttpGet("getuserInfo")]
+        public async Task<IActionResult> GetUserInfo(int id)
+        {
+            var result = await _userService.GetUserById(id);
+            if (result.Success == true)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getuserEmail")]
+        public async Task<IActionResult> GetUserEmail(string username)
+        {
+            var result = await _userService.GetUserEmail(username);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+        [HttpPost("updateuser")]
+        public async Task<IActionResult> Updateuser(UserUpdateRequest userUpdateRequest)
+        {
+            var result = await _userService.UpdateUser(userUpdateRequest);
+            if (result.Success == true)
             {
                 return Ok(result);
             }

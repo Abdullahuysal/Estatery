@@ -7,7 +7,7 @@ export default class HouseService{
         return axios.get(url+"/getallhouse");
     }
     GetById(payload){
-        return axios.get(url+"/getbyId",payload);
+        return axios.get(`https://localhost:44321/api/House/gethousebyid?id=${payload}`);
     }
     AddHouse(payload){
         return axios.post(url+"/addhouse",payload);

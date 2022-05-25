@@ -1,6 +1,10 @@
 import React from "react";
+import { ImExit } from "react-icons/im";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 export default function Navi() {
+  function exit(){
+    localStorage.clear();
+  }
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -9,24 +13,27 @@ export default function Navi() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#features">Ev İlanları</Nav.Link>
-              <Nav.Link href="#pricing">Arazi İlanları</Nav.Link>
-              <Nav.Link href="#fd">İş Yeri İlanları</Nav.Link>
+              <Nav.Link href="/HouseList">Ev İlanları</Nav.Link>
+              <Nav.Link href="/LandList">Arazi İlanları</Nav.Link>
+              <Nav.Link href="/WorkPlaceList">İş Yeri İlanları</Nav.Link>
             </Nav>
             <Nav>
-            <NavDropdown title="User Name" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.2">
+            <NavDropdown title={localStorage.getItem("username")+" "+localStorage.getItem("usersecondname")} id="collasible-nav-dropdown">
+                <NavDropdown.Item href="/UserInfo">
                   Kişisel Bilgiler
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  İlan Ekle
+                <NavDropdown.Item href="/Addhouse">
+                  Ev İlanı Ekle
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">
-                  Favori İlanlarım
+                <NavDropdown.Item href="/Addland">
+                  Arazi İlanı Ekle
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/Addworkplace">
+                  İş yeri İlanı Ekle
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.5">
-                  Çıkış Yap
+                <NavDropdown.Item onClick={exit} href="Login" >
+                  Çıkış Yap <ImExit/>
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>

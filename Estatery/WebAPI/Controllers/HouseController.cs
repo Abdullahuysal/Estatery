@@ -20,20 +20,30 @@ namespace WebAPI.Controllers
             _houseService = houseService;
         }
         [HttpGet("getallhouse")]
-        public IActionResult GetAllHouses()
+        public async Task<IActionResult> GetAllHouses()
         {
-            var result = _houseService.GetAllHouses();
-            return Ok(result.Result);
+            var result = await _houseService.GetAllHouses();
+            return Ok(result);
         }
         [HttpPost("addhouse")]
-        public IActionResult AddHouse(HouseRequest houseRequest)
+        public async Task<IActionResult> AddHouse(HouseRequest houseRequest)
         {
-            var result = _houseService.AddHouse(houseRequest);
-            if (result.Result.Success)
+            var result =await _houseService.AddHouse(houseRequest);
+            if (result.Success==true)
             {
-                return Ok(result.Result);
+                return Ok(result);
             }
-            return BadRequest(result.Result);
+            return BadRequest(result);
+        }
+        [HttpGet("gethousebyid")]
+        public async Task<IActionResult> GetHouseById(int id)
+        {
+            var result = await _houseService.GetHouseById(id);
+            if (result!=null)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
         }
     }
 }

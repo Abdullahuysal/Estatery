@@ -1,30 +1,54 @@
-import React from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import Navi from "../../layouts/Navi";
+import HouseService from "../../services/RealEstate/houseService";
+import { FaBath ,FaHome,FaSearchLocation} from "react-icons/fa";
+import { MdConstruction } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 export default function HouseList() {
+  let navigate=useNavigate();
+  const[houses,setHouses]=useState([]);
+  useEffect(()=>{
+    let houseService=new HouseService();
+    houseService.GetAll().then((result)=>setHouses(result.data))
+    
+  },[]);
+  function navigatehouseDetailsPage(houseid){
+    localStorage.setItem("houseid",houseid);
+    navigate("/HouseDetail");
+  }
   return (
     <div>
       <Navi />
       <div className="container rounded bg-white mt-5 mb-5">
-      <Card  style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
+        <div className="row">
+      {houses.map((house) =>(
+        <div
+        key={house.id}
+        style={{width:"400px"}}
+        >
+          <Card   style={{ marginTop: "3rem",textAlign:"center"}} >
+        <Card.Img variant="top" src={house.houseImageUrls[0].name} />
+        <Card.Body >
+          İlan Bilgileri 
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroupItem>Cras justo odio</ListGroupItem>
-          <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-          <ListGroupItem>Vestibulum at eros</ListGroupItem>
+          <ListGroupItem><MdConstruction/> Bina Yapım Yılı : {house.constructionYear}</ListGroupItem>
+          <ListGroupItem><FaSearchLocation/> Lokasyon : {house.location.cityName}/{house.location.districtName}</ListGroupItem>
+          <ListGroupItem><FaHome/> Oda Sayısı: {house.numberOfRooms} </ListGroupItem>
+          <ListGroupItem><FaBath/> Banyo Sayısı: {house.numberOfRooms} </ListGroupItem>
+          <ListGroupItem> Toplam {house.squareMeter} m² </ListGroupItem>
         </ListGroup>
         <Card.Body>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
+          <Button
+          onClick={()=>navigatehouseDetailsPage(house.id)}
+          className="btn-success"
+          >İlanı İncele</Button>
         </Card.Body>
-      </Card>
+      </Card>  
+        </div>
+      ))}
+      </div>
     </div>
     </div>
   );

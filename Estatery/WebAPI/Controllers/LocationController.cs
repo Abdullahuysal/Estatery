@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
             _locationService = locationService;
         }
         [HttpPost]
-        public  IActionResult AddLocation(LocationRequest locationRequest)
+        public IActionResult AddLocation(LocationRequest locationRequest)
         {
             var result = _locationService.AddLocation(locationRequest);
             if (result.Result.Success)
@@ -28,5 +28,6 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result.Result);
         }
+
     }
 }

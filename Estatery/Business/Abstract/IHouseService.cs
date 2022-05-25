@@ -18,6 +18,6 @@ namespace Business.Abstract
         Task<IResult> AddHouse(HouseRequest HouseRequest);
         Task<IResult> UpdateHouse(HouseUpdateRequest houseUpdateRequest);
         Task<IResult> DeleteHouse(HouseRequest houseRequest);
-        Task<HouseResponse> GetHouseById(int id);
+        Task<House> GetHouseById(int id);
     }
 }

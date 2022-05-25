@@ -107,23 +107,23 @@ namespace Web.Controllers
             var house =await _houseService.AddHouse(houseRequest);
             return RedirectToAction(nameof(HomePage));
         }
-        [HttpGet]
-        public async Task<IActionResult> Update(int id)
-        {
+        //[HttpGet]
+        //public async Task<IActionResult> Update(int id)
+        //{
 
-            if (await _houseService.IsExist(id))
-            {
-                HouseResponse houseResponse = await _houseService.GetHouseById(id);
-                List<SelectListItem> locationItems = await getLocationForDropDown();
-                List<SelectListItem> salescategoryItems = await getsalesCategoryForDropDown();
-                List<SelectListItem> salestypeItems = await getsalesTypeForDropDown();
-                ViewBag.Locations = locationItems;
-                ViewBag.salescategoryItems = salescategoryItems;
-                ViewBag.salestypeItems = salestypeItems;
-                return View(houseResponse);
-            }
-            return NotFound();
-        }
+        //    if (await _houseService.IsExist(id))
+        //    {
+        //        //HouseResponse houseResponse = await _houseService.GetHouseById(id);
+        //        //List<SelectListItem> locationItems = await getLocationForDropDown();
+        //        //List<SelectListItem> salescategoryItems = await getsalesCategoryForDropDown();
+        //        //List<SelectListItem> salestypeItems = await getsalesTypeForDropDown();
+        //        //ViewBag.Locations = locationItems;
+        //        //ViewBag.salescategoryItems = salescategoryItems;
+        //        //ViewBag.salestypeItems = salestypeItems;
+        //        //return View(houseResponse);
+        //    }
+        //    return NotFound();
+        //}
         [HttpPost]
         public async Task<IActionResult> Update(HouseUpdateRequest houseUpdateRequest)
         {
