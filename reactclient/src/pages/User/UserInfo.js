@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import profile from "../../images/profile.png";
+import {  useNavigate } from 'react-router-dom';
 import Navi from "../../layouts/Navi";
 import UserService from "../../services/User/userService";
 import alertify from "alertifyjs";
 export default function UserInfo() {
+  let navigate=useNavigate();
   const [userInfo, setUserInfo] = useState([]);
   const [userfirstName, setuserfirstName] = useState([]);
   const [userSecondName, setuserSecondName] = useState([]);
@@ -33,6 +35,16 @@ export default function UserInfo() {
       alertify.error("Güncelleme işlemi başarısız oldu");
     }
 
+  }
+  async function deleteuser(e){
+    e.preventDefault();
+    let userService = new UserService();
+    var userid=localStorage.getItem("userid");
+    let result=await userService.delete(userid);
+    if(result.data!=null){
+      alertify.success("Hesabınız pasif duruma getirilmiştir")
+      navigate("/Login");
+    }
   }
   return (
     <div>
@@ -77,6 +89,14 @@ export default function UserInfo() {
                   className="btn btn-success"
                 >
                   Güncelle
+                </button>
+              </Form>
+              <Form onSubmit={deleteuser}>
+              <button
+                  style={{ marginTop: "10px" }}
+                  className="btn btn-danger"
+                >
+                  Hesabımı Sil
                 </button>
               </Form>
             </div>

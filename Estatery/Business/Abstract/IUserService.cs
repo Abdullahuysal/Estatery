@@ -16,6 +16,6 @@ namespace Business.Abstract
         Task<IDataResult<User>> GetUserById(int id);
         Task<IResult>UpdateUser(UserUpdateRequest userUpdateRequest);
         Task<string> GetUserEmail(string username);
-     
+        Task<IResult> DeleteUser(int userid);
     }
 }

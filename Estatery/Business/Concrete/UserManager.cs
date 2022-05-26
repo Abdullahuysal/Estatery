@@ -28,6 +28,18 @@ namespace Business.Concrete
             _userConverter = userConverter;
         }
 
+        public async Task<IResult> DeleteUser(int userid)
+        {
+            var user = await _userDal.GetAsync(u => u.Id==userid);
+            user.Active = false;
+            var result = await _userDal.UpdateAsync(user);
+            if (result != null)
+            {
+                return new SuccessResult(BusinessMessages.DeleteSuccessfull);
+            }
+            return new ErrorResult(BusinessMessages.DeleteFailed);
+        }
+
         public async Task<IDataResult<User>> GetUserById(int id)
         {
             var user = await _userDal.GetUserById(id);

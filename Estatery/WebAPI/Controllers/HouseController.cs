@@ -45,5 +45,15 @@ namespace WebAPI.Controllers
             }
             return BadRequest();
         }
+        [HttpPost("updatehouse")]
+        public async Task<IActionResult> UpdateHouse(HouseUpdateRequest houseUpdateRequest)
+        {
+            var result = await _houseService.UpdateHouse(houseUpdateRequest);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
+        }
     }
 }

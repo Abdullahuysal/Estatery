@@ -14,4 +14,7 @@ export default class UserService{
     update(payload){
         return axios.post(url+"/updateuser",payload);
     }
+    delete(payload){
+        return axios.delete(`https://localhost:44321/api/User/deleteuser?Userid=${payload}`);
+    }
 }

@@ -70,6 +70,15 @@ namespace WebAPI.Controllers
             }
             return BadRequest();
         }
-
+        [HttpDelete("deleteuser")]
+        public async Task<IActionResult> DeleteUser(int Userid)
+        {
+            var result = await _userService.DeleteUser(Userid);
+            if (result.Success == true)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+        }
     }
 }
